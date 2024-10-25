@@ -10,7 +10,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "rune-sdk": "^4.24.3"
+    "rune-sdk": "^4.24.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",

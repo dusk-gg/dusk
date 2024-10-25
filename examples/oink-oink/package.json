@@ -5,7 +5,7 @@
   "homepage": ".",
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.5.3",
-    "rune-sdk": "^4.24.3",
+    "rune-sdk": "^4.24.4",
     "howler": "^2.2.3",
     "jotai": "^2.0.3",
     "react": "^18.2.0",
