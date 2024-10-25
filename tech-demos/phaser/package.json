@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "rune-sdk": "^4.24.2",
+    "rune-sdk": "^4.24.3",
     "phaser": "3.80.1",
     "propel-js": "1.0.21"
   },

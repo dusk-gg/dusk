@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rune-sdk": "^4.24.2"
+    "rune-sdk": "^4.24.3"
   },
   "devDependencies": {
     "@eslint/compat": "^1.1.1",
