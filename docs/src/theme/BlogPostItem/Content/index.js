@@ -11,7 +11,7 @@ async function subscribe(email) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       email,
-      domain: "duskgg.substack.com",
+      domain: "runedevs.substack.com",
     }),
   })
   const json = await response.json()
