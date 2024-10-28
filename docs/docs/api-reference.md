@@ -38,7 +38,7 @@ Rune.initLogic({
       game.scores[playerId]++
       //Switch turn
       game.currentPlayerIndex = (game.currentPlayerIndex + 1) % allPlayerIds.length;
-      game.currentPlayerStartedAt = Rune.gameTimeInSeconds();
+      game.currentPlayerStartedAt = Rune.gameTime();
       // Determine if game has ended
       if (isVictoryOrDraw(game)) {
         Rune.gameOver({
@@ -57,9 +57,9 @@ Rune.initLogic({
   },
   update: ({ game, allPlayerIds }) => {
     //If 30 seconds have passed since last player scored, switch player
-    if (Rune.gameTimeInSeconds() - game.lastPlayerScoredAt > 30) {
+    if ((Rune.gameTime() - game.currentPlayerStartedAt) / 1000 > 30) {
       game.currentPlayerIndex = (game.currentPlayerIndex + 1) % allPlayerIds.length;
-      game.currentPlayerStartedAt = Rune.gameTimeInSeconds();
+      game.currentPlayerStartedAt = Rune.gameTime();
     }
   },
   updatesPerSecond: 10,

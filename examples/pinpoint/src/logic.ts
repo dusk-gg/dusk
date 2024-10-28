@@ -74,7 +74,7 @@ Rune.initLogic({
       })
 
       if (game.playerIds.length > 1 && !game.roundTimerStartedAt) {
-        game.roundTimerStartedAt = Rune.gameTimeInSeconds()
+        game.roundTimerStartedAt = Rune.gameTime() / 1000
       }
 
       if (
@@ -119,7 +119,7 @@ Rune.initLogic({
   update: ({ game }) => {
     if (
       game.roundTimerStartedAt &&
-      Rune.gameTimeInSeconds() >= game.roundTimerStartedAt + roundDuration
+      Rune.gameTime() / 1000 >= game.roundTimerStartedAt + roundDuration
     ) {
       const playersWhoGuessed = game.guesses
         .filter((guess) => guess.round === game.currentRound)

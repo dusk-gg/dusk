@@ -87,7 +87,7 @@ Rune.initLogic({
 
         game.currentTurn.timerStartedAt += displayCorrectGuessFor
         game.currentTurn.latestActingStartedAt =
-          Rune.gameTimeInSeconds() + displayCorrectGuessFor
+          Rune.gameTime() / 1000 + displayCorrectGuessFor
         game.currentTurn.showSkipGuessButton = false
       }
     },
@@ -96,7 +96,7 @@ Rune.initLogic({
 
       game.currentTurn.animal = getRandomItem(game.animals)
       game.currentTurn.emotion = getRandomItem(game.emotions)
-      game.currentTurn.latestActingStartedAt = Rune.gameTimeInSeconds()
+      game.currentTurn.latestActingStartedAt = Rune.gameTime() / 1000
       game.currentTurn.showSkipGuessButton = false
     },
     nextRound: (_, { game }) => {
@@ -142,28 +142,28 @@ Rune.initLogic({
     switch (game.currentTurn.stage) {
       case "countdown":
         if (
-          Rune.gameTimeInSeconds() >=
+          Rune.gameTime() / 1000 >=
           game.currentTurn.timerStartedAt + turnCountdown
         ) {
           game.currentTurn.stage = "acting"
-          game.currentTurn.timerStartedAt = Rune.gameTimeInSeconds()
-          game.currentTurn.latestActingStartedAt = Rune.gameTimeInSeconds()
+          game.currentTurn.timerStartedAt = Rune.gameTime() / 1000
+          game.currentTurn.latestActingStartedAt = Rune.gameTime() / 1000
           game.currentTurn.showSkipGuessButton = false
         }
         break
       case "acting":
         if (
-          Rune.gameTimeInSeconds() >=
+          Rune.gameTime() / 1000 >=
           game.currentTurn.timerStartedAt + turnDuration
         ) {
           game.currentTurn.stage = "endOfTurn"
-          game.currentTurn.timerStartedAt = Rune.gameTimeInSeconds()
-          game.currentTurn.latestActingStartedAt = Rune.gameTimeInSeconds()
+          game.currentTurn.timerStartedAt = Rune.gameTime() / 1000
+          game.currentTurn.latestActingStartedAt = Rune.gameTime() / 1000
           game.currentTurn.showSkipGuessButton = false
         }
 
         if (
-          Rune.gameTimeInSeconds() >=
+          Rune.gameTime() / 1000 >=
           game.currentTurn.latestActingStartedAt + hideGuessTurnButtonDuration
         ) {
           game.currentTurn.showSkipGuessButton = true
@@ -171,7 +171,7 @@ Rune.initLogic({
         break
       case "endOfTurn":
         if (
-          Rune.gameTimeInSeconds() >=
+          Rune.gameTime() / 1000 >=
           game.currentTurn.timerStartedAt + endOfTurnDuration
         ) {
           for (const player of game.players) {
