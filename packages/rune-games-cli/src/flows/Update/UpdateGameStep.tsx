@@ -173,7 +173,7 @@ export function UpdateGameStep({ gameId }: { gameId: number }) {
               ? logoPath === ""
                 ? "Will not update the game logo"
                 : `Will update the logo to the one from ${logoPath}`
-              : "Provide path to game logo (optional)"
+              : "Admin only step: Provide path to game logo (optional)"
           }
           view={
             !logoPathSubmitted && (
