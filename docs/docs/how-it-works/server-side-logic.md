@@ -39,7 +39,7 @@ In case you use a library that's not on the supported libraries list, you'll rec
 
 Rune has created an eslint plugin to give warnings for potentially unsafe code directly in your editor! If you're using the Rune quickstart template created using `npx rune-games-cli@latest create`, then this eslint plugin is already set up for you. If not, then follow the steps below.
 
-Add the plugin to the extends section of your `eslint.config.mjs` configuration file:
+Add the plugin to your `eslint.config.mjs` configuration file:
 
 ```js
 import runePlugin from "rune-sdk/eslint.js"
