@@ -1,4 +1,3 @@
-import { fixupPluginRules } from "@eslint/compat"
 import js from "@eslint/js"
 import prettier from "eslint-plugin-prettier/recommended"
 import pluginReact from "eslint-plugin-react"
@@ -30,7 +29,7 @@ export default [
   ...tseslint.configs.recommended,
   {
     plugins: {
-      "react-hooks": fixupPluginRules(pluginReactHooks),
+      "react-hooks": pluginReactHooks,
     },
     rules: pluginReactHooks.configs.recommended.rules,
   },
