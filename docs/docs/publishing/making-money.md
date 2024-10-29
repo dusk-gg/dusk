@@ -51,7 +51,7 @@ The playing again and playtime credits can accumulate for each player for each d
 
 To celebrate the launch of the creator fund, **all games will earn 5x the credit amounts listed above for Nov-Dec 2024!** 🚀
 
-As you can tell from the numbers, the creator fund tries to prioritize high-quality games that players love coming back to and sharing with their friends more than raw playtime.
+As you can tell from the numbers, the creator fund tries to prioritize high-quality games that players love coming back to and sharing with their friends.
 
 ## See Stats and Earnings
 
