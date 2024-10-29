@@ -43,7 +43,7 @@ You can apply for the creator fund as soon as your games hit 100+ hours/month an
 
 Your games earn credits each day based on the metrics described earlier on this page. We use this credits system so that in the future you can choose to use some credits for optional extra services like AI-powered gameplay if you like. When paying out to you, credits are automatically converted to dollars at a rate of 1 USD = 10000 credits.
 
-At the beginning of each month, you'll receive a $ payout for the accrued earnings last month using our payments provider. We aggregate payouts in this way to minimize transaction fees so that each $ goes further. This is similar to how e.g. YouTube does it. Here's the [terms of service for the creator fund](https://www.rune.ai/creator-fund-terms) with all the legalese.
+At the beginning of each month, you'll receive a $ payout for the accrued earnings last month using our payments provider. We aggregate payouts in this way to minimize transaction fees so that each $ goes further. This is similar to how e.g. YouTube does it. If there's a month with accrued earnings below the $10 minimum payment threshold, then that month's earnings will roll over to the next month. Here's the [terms of service for the creator fund](https://www.rune.ai/creator-fund-terms) with all the legalese.
 
 ## See Stats and Earnings
 
