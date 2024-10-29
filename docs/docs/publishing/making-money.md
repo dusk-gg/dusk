@@ -31,11 +31,11 @@ The creator fund has four segments (T1, T2, T3, T4) determined by grouping the p
 Here's how much your game makes for each metric and in each region:
 
 | Region | Player plays again next day | Player shares your game | Player plays for 2+ hours |
-| ------ |--------------------------------|------------------------------------|------------------------------------|
-| T1     | 45                             | 600                                | 10                                 |
-| T2     | 29.25                          | 390                                | 6.5                                |
-| T3     | 18                             | 240                                | 4                                  |
-| T4     | 9                              | 120                                | 2                                  |
+| ------ | --------------------------- | ----------------------- | ------------------------- |
+| T1     | 35                          | 400                     | 10                        |
+| T2     | 22.75                       | 260                     | 6.5                       |
+| T3     | 14                          | 160                     | 4                         |
+| T4     | 7                           | 80                      | 2                         |
 
 The playing again and playtime credits can accumulate for each player for each day, i.e. a dedicated player will keep earning credits on your game. The game share credits will only be awarded once per player to minimize risk of scammers.
 To celebrate the launch of the creator fund, **all games will earn 5x the amounts listed above for Nov-Dec 2024!** 🚀
