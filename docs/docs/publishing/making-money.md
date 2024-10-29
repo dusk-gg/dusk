@@ -4,8 +4,8 @@ sidebar_position: 10
 
 # Making Money
 
-:::caution
-The creator fund is not yet launched. It will launch in October 🥳 We're sharing these docs already with you now so you can get a sneak peek into what's coming.   
+:::tip
+The creator fund just launched 🥳 To celebrate the launch, all games will earn 5x for Nov-Dec 2024!
 :::
 
 We're passionate about supporting indie game devs in making awesome multiplayer games. As part of that, we have created a creator fund that pays indie devs a bit of money based on their games' metrics. We provide optimized servers and a big audience so you don't need to deal with infrastructure costs or pay for ads.
@@ -25,15 +25,31 @@ The specific amount of money earned for each of these metrics depends on the pla
 
 Games often have different localized prices by country and earn different amounts of money per player based on the geo. We incorporate this aspect into the creator fund by scaling the earnings for each metric depending on the player’s country.
 
-The creator fund has four segments (T1, T2, T3, T4) determined by grouping the per-capita GDP of the world’s countries. For instance, United States is in T1, Estonia is in T2, Mexico is in T3, and Mozambique is in T4. When launching the creator fund, we’ll share the $ earned for each metric for each segment.
+The creator fund has four segments (T1, T2, T3, T4) determined by grouping the per-capita GDP of the world’s countries. For instance, United States is in T1, Estonia is in T2, Mexico is in T3, and Mozambique is in T4. Of course, to make the most money you should translate your games into the most popular non-English languages (Spanish, Russian, Portuguese) so that there’s more players enjoying your game!
 
-Of course, to make the most money you should translate your games into the most popular non-English languages (Spanish, Russian, Portuguese) so that there’s more players enjoying your game!
+Here's how much your game makes for each metric and in each region:
 
-## See Earnings and Withdraw Money
+-- TODO: ADD TABLE!
 
-In September, we will release our new game developer dashboard, where you can see stats for all your games. The dashboard also has detailed info on how much each of your games has earned and the calculations behind those earnings.
+::tip
+To celebrate the launch of the creator fund, all games will earn 5x the amounts listed above for Nov-Dec 2024!
+:::
 
-When you want to cash out your earnings, you submit a request on the dashboard. We review requests within 5 business days and send a payment to your PayPal account.
+As you can tell from the numbers, the creator fund tries to prioritize high-quality games that players love coming back to and sharing with their friends more than raw playtime. 
+
+## Application and Monthly Payouts
+
+You can apply for the creator fund as soon as your games hit 100+ hours/month and a return rate of 5%. We'll do a quick review to check that there's nothing fishy going on and approve you within 5 business days.
+
+Your games earn credits each day based on the metrics described earlier on this page. We use this credits system so that in the future you can choose to use some credits for optional extra services like AI-powered gameplay if you like. When paying out to you, credits are automatically converted to dollars at a rate of 1 USD = 10000 credits.
+
+At the beginning of each month, you'll receive a $ payout for the accrued earnings last month using our payments provider. We aggregate payouts in this way to minimize transaction fees so that each $ goes further. This is similar to how e.g. YouTube does it. Here's the [terms of service for the creator fund](https://www.rune.ai/creator-fund-terms) with all the legalese.
+
+## See Stats and Earnings
+
+You can see stats for all your games on the [Dev Dashboard](https://dash.rune.ai/). The dashboard helps you improve your game by showing you game errors and your games' metric relative to other games on Rune. For instance, if you see that your game has a low return rate, you might want to add more content to make it more replayable or improve the game's onboarding to make it easier for new players to understand.
+
+The dashboard also has detailed info on how much each of your games has earned from the creator fund and the calculations behind those earnings. We hope this transparency helps you understand how the creator fund works and how you can improve your games to earn more money.
 
 ## Actively Playing
 
