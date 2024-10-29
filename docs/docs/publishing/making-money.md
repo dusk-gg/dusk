@@ -40,14 +40,14 @@ At the beginning of each month, you'll receive a $ payout for the accrued credit
 
 Here's how many credits your game earns for each metric in each region:
 
-| Region | Player plays again next day | Player shares your game | Player plays for 2+ hours |
-| ------ | --------------------------- | ----------------------- | ------------------------- |
-| T1     | 35                          | 400                     | 10                        |
-| T2     | 22.75                       | 260                     | 6.5                       |
-| T3     | 14                          | 160                     | 4                         |
-| T4     | 7                           | 80                      | 2                         |
+| Region | Player plays again next day | Player shares your game | Player plays for 1 hour |
+| ------ | --------------------------- | ----------------------- |-------------------------|
+| T1     | 35                          | 400                     | 5                       |
+| T2     | 22.75                       | 260                     | 3.25                    |
+| T3     | 14                          | 160                     | 2                       |
+| T4     | 7                           | 80                      | 1                       |
 
-The playing again and playtime credits can accumulate for each player for each day, i.e. a dedicated player will keep earning credits on your game. The game share credits will only be awarded once per player to minimize risk of scammers. Of course, your game will also earn playtime credits if players play for less than 2 hours, that's just the maximum amount possible per player per day.
+The playing again and playtime credits can accumulate for each player for each day, i.e. a dedicated player will keep earning credits on your game. The game share credits will only be awarded once per player to minimize risk of scammers. Of course, your game will also earn playtime credits if players play for less an hour, that'll be scaled accordingly.
 
 To celebrate the launch of the creator fund, **all games will earn 5x the credit amounts listed above for Nov-Dec 2024!** 🚀
 
