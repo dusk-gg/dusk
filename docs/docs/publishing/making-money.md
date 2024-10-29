@@ -47,8 +47,9 @@ Here's how many credits your game earns for each metric in each region:
 | T3     | 14                          | 160                     | 4                         |
 | T4     | 7                           | 80                      | 2                         |
 
-The playing again and playtime credits can accumulate for each player for each day, i.e. a dedicated player will keep earning credits on your game. The game share credits will only be awarded once per player to minimize risk of scammers.
-To celebrate the launch of the creator fund, **all games will earn 5x the amounts listed above for Nov-Dec 2024!** 🚀
+The playing again and playtime credits can accumulate for each player for each day, i.e. a dedicated player will keep earning credits on your game. The game share credits will only be awarded once per player to minimize risk of scammers. Of course, your game will also earn playtime credits if players play for less than 2 hours, that's just the maximum amount possible per player per day.
+
+To celebrate the launch of the creator fund, **all games will earn 5x the credit amounts listed above for Nov-Dec 2024!** 🚀
 
 As you can tell from the numbers, the creator fund tries to prioritize high-quality games that players love coming back to and sharing with their friends more than raw playtime.
 
