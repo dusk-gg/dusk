@@ -20,7 +20,7 @@ You will earn money based on:
 - players who share your game externally
 - time players spent actively playing your game
 
-The specific amount of money earned for each of these metrics depends on the player regions (see the next section below). With payouts based on these three metrics, the creator fund supports great games that players love coming back to and want to share with their friends!
+The specific amount of money earned for each of these metrics depends on the player regions (more info below). With payouts based on these three metrics, the creator fund supports great games that players love coming back to and want to share with their friends!
 
 ## Player Regions
 
@@ -28,7 +28,17 @@ Games often have different localized prices by country and earn different amount
 
 The creator fund has four segments (T1, T2, T3, T4) determined by grouping the per-capita GDP of the world’s countries. For instance, United States is in T1, Estonia is in T2, Mexico is in T3, and Mozambique is in T4. Of course, to make the most money you should translate your games into the most popular non-English languages (Spanish, Russian, Portuguese) so that there’s more players enjoying your game!
 
-Here's how much your game makes for each metric and in each region:
+## Application and Monthly Payouts
+
+You can apply for the creator fund as soon as your games hit 100+ hours/month and a return rate of 5%. We'll do a quick review to check that there's nothing fishy going on and approve you within 5 business days.
+
+Your games earn credits each day based on the metrics described earlier on this page. We use this credits system so that in the future you can choose to use some credits for optional extra services like AI-powered gameplay if you like. When paying out to you, credits are automatically converted to dollars at a rate of 1 USD = 10000 credits.
+
+At the beginning of each month, you'll receive a $ payout for the accrued credits last month using our payments provider. We aggregate payouts in this way to minimize transaction fees so that each $ goes further. This is similar to how e.g. YouTube does it. If there's a month with accrued earnings below the $10 minimum payment threshold, then that month's earnings will roll over to the next month. Here's the [terms of service for the creator fund](https://www.rune.ai/creator-fund-terms) with all the legalese.
+
+## Earnings per Metric
+
+Here's how many credits your game earns for each metric in each region:
 
 | Region | Player plays again next day | Player shares your game | Player plays for 2+ hours |
 | ------ | --------------------------- | ----------------------- | ------------------------- |
@@ -41,14 +51,6 @@ The playing again and playtime credits can accumulate for each player for each d
 To celebrate the launch of the creator fund, **all games will earn 5x the amounts listed above for Nov-Dec 2024!** 🚀
 
 As you can tell from the numbers, the creator fund tries to prioritize high-quality games that players love coming back to and sharing with their friends more than raw playtime.
-
-## Application and Monthly Payouts
-
-You can apply for the creator fund as soon as your games hit 100+ hours/month and a return rate of 5%. We'll do a quick review to check that there's nothing fishy going on and approve you within 5 business days.
-
-Your games earn credits each day based on the metrics described earlier on this page. We use this credits system so that in the future you can choose to use some credits for optional extra services like AI-powered gameplay if you like. When paying out to you, credits are automatically converted to dollars at a rate of 1 USD = 10000 credits.
-
-At the beginning of each month, you'll receive a $ payout for the accrued credits last month using our payments provider. We aggregate payouts in this way to minimize transaction fees so that each $ goes further. This is similar to how e.g. YouTube does it. If there's a month with accrued earnings below the $10 minimum payment threshold, then that month's earnings will roll over to the next month. Here's the [terms of service for the creator fund](https://www.rune.ai/creator-fund-terms) with all the legalese.
 
 ## See Stats and Earnings
 
