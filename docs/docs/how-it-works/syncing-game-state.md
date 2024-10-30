@@ -104,3 +104,9 @@ Games running on Rune should support initializing the game at any possible momen
 Your game must support this `stateSync` event. If you built your game in a reactive way (i.e. it always rerenders according to `onChange`'s `game` argument), then you don't need to worry about `stateSync` event. If your game has side effects, then you might need to specifically handle this event.
 
 You can test your game by adding players/spectators joining at various times during your game session. See [Simulating Multiplayer](/playtesting/simulating-multiplayer.md) for more info on how you can simulate a multiplayer experience when developing.
+
+
+## Detecting game restart {#game-restart}
+
+When a new game session is started (start of the game, restart, new player connecting to an ongoing game), the client `onChange` is called with `stateSync` event which contains `isNewGame` parameter set to true. This is useful when games need to initialize assets, UI or other state in the client for a new game.
+
