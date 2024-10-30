@@ -14,7 +14,7 @@ export function Timer() {
 
     if (roundTimerStartedAt) {
       const startedAt =
-        Date.now() - (Rune.gameTimeInSeconds() - roundTimerStartedAt) * 1000
+        Date.now() - (Rune.gameTime() / 1000 - roundTimerStartedAt) * 1000
 
       const tick = () => {
         const value = roundDuration - (Date.now() - startedAt) / 1000 - 0.5
