@@ -39,7 +39,7 @@ export default function BlogPostItemContent({ children, className }) {
       itemProp="articleBody"
     >
       <MDXContent>{children}</MDXContent>
-      <div style={{ width: "100%", textAlign: "center" }}>
+      <div style={{ width: "100%", textAlign: "center", display: "none" }}>
         Subscribe to our newsletter for more game dev blog posts
       </div>
 
