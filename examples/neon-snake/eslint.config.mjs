@@ -3,7 +3,6 @@ import globals from "globals"
 import runePlugin from "rune-sdk/eslint.js"
 import tseslint from "typescript-eslint"
 import pluginReactHooks from "eslint-plugin-react-hooks"
-import { fixupPluginRules } from "@eslint/compat"
 import prettier from "eslint-plugin-prettier/recommended"
 
 export default [
@@ -22,7 +21,7 @@ export default [
   ...tseslint.configs.recommended,
   {
     plugins: {
-      "react-hooks": fixupPluginRules(pluginReactHooks),
+      "react-hooks": pluginReactHooks,
     },
     rules: pluginReactHooks.configs.recommended.rules,
   },
