@@ -8,7 +8,7 @@ Update the `vite.config.ts`
 ```ts
 // vite.config.ts
 import { defineConfig } from "vite"
-import rune from "vite-plugin-rune"
+import rune from "rune-sdk/vite"
 
 // https://vitejs.dev/config/
 export default defineConfig({
