@@ -101,6 +101,12 @@ These restrictions are necessary to make great multiplayer games using predict-r
 
 Games running on Rune should support initializing the game at any possible moment as someone can join as a spectator/player at any time. This could happen e.g. at the start of the game, in the middle of a match, or after game over. This initialization is done using the `stateSync` event. Additionally, the `stateSync` event is also used when restarting the game, reconnecting after an unexpected disconnect, or if the game crashes.
 
+## Detecting game restart {#game-restart}
+
+When a new game session is detected (start of the game, restart, new player connecting to an ongoing game), the client `onChange` is called with `stateSync` event which contains `isNewGame` parameter set to true. This is useful when games need to initialize some UI or assets at the beginning.
+
+```js
+
 Your game must support this `stateSync` event. If you built your game in a reactive way (i.e. it always rerenders according to `onChange`'s `game` argument), then you don't need to worry about `stateSync` event. If your game has side effects, then you might need to specifically handle this event.
 
 You can test your game by adding players/spectators joining at various times during your game session. See [Simulating Multiplayer](/playtesting/simulating-multiplayer.md) for more info on how you can simulate a multiplayer experience when developing.
