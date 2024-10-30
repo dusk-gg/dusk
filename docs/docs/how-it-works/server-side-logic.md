@@ -39,33 +39,33 @@ In case you use a library that's not on the supported libraries list, you'll rec
 
 Rune has created an eslint plugin to give warnings for potentially unsafe code directly in your editor! If you're using the Rune quickstart template created using `npx rune-games-cli@latest create`, then this eslint plugin is already set up for you. If not, then follow the steps below.
 
-First, install the Rune eslint plugin:
+Add the plugin to your `eslint.config.mjs` configuration file:
 
-```bash
-npm install eslint-plugin-rune --save-dev
-```
+```js
+import runePlugin from "rune-sdk/eslint.js"
 
-Next, add the plugin to the extends section of your `.eslintrc` configuration file:
-
-```json
-{
-  "extends": ["plugin:rune/recommended"]
-}
+...
+export default [
+   //other config
+   //...
+  
+   ...runePlugin.configs.recommended,
+]
 ```
 
 That's it. Your logic code will now be linted to detect potentially unsafe code and prevent desyncs! 🧙‍♂️
 
 By default, the plugin will check files named `logic.js`/`logic.ts` or files in a `logic` folder for the Rune SDK rules. If needed, you can specify more files to lint yourself with:
 
-```json
-{
-  "overrides": [
-    {
-      "files": ["lib/*.ts"],
-      "extends": ["plugin:rune/logicModule"]
-    }
-  ]
-}
+```js
+import runePlugin from "rune-sdk/eslint.js"
+
+export default [
+  {
+    files: ["**/logic.ts", "**/logic.js"],
+    ...runePlugin.configs.logicModuleConfig,
+  }
+]
 ```
 
 You can also check out the [eslint plugin code](https://github.com/rune/rune/tree/staging/packages/eslint-plugin-rune).
