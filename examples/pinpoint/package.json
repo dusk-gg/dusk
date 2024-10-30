@@ -7,7 +7,7 @@
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@photo-sphere-viewer/core": "^5.1.4",
     "@photo-sphere-viewer/cubemap-tiles-adapter": "^5.1.4",
-    "rune-sdk": "^4.24.3",
+    "rune-sdk": "^4.24.5",
     "esbuild": "^0.17.19",
     "howler": "^2.2.3",
     "jotai": "^2.0.3",
