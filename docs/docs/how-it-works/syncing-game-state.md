@@ -108,5 +108,5 @@ You can test your game by adding players/spectators joining at various times dur
 
 ## Detecting game restart {#game-restart}
 
-When a new game session is detected (start of the game, restart, new player connecting to an ongoing game), the client `onChange` is called with `stateSync` event which contains `isNewGame` parameter set to true. This is useful when games need to initialize some UI or assets at the beginning.
+When a new game session is started (start of the game, restart, new player connecting to an ongoing game), the client `onChange` is called with `stateSync` event which contains `isNewGame` parameter set to true. This is useful when games need to initialize assets, UI or other state in the client for a new game.
 
