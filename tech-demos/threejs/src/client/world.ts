@@ -1,6 +1,6 @@
 import { PlaneGeometry, Mesh, MeshLambertMaterial, RepeatWrapping } from "three"
 import { getScene } from "./renderer"
-import { getAssetUrl } from "./assets"
+import { getAssetUrl } from "../util/assets"
 import { loadTexture } from "./models"
 
 export async function setupWorld() {
@@ -15,6 +15,8 @@ export async function setupWorld() {
     map: texture,
   })
   const baseFloorPlane = new Mesh(geometry, material)
+  baseFloorPlane.translateX(50)
+  baseFloorPlane.translateZ(50)
   baseFloorPlane.rotateX(-Math.PI / 2)
   baseFloorPlane.receiveShadow = true
   getScene().add(baseFloorPlane)

@@ -7,7 +7,7 @@ import {
   TextureLoader,
 } from "three"
 import { GLTF, GLTFLoader } from "three/examples/jsm/Addons.js"
-import { getAssetUrl } from "./assets"
+import { getAssetUrl } from "../util/assets"
 
 // loader for GLTF models (thanks threejs!)
 const gltfLoader = new GLTFLoader()

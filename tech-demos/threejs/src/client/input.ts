@@ -1,6 +1,7 @@
+import { Controls } from "../shared/controls"
 import { getCameraAngle, rotateCameraY } from "./camera"
+import { getLocalCharacter3D } from "../client"
 import { getJoystickState } from "./joystick"
-import { Controls } from "./logic"
 
 // the state of the keyboard keyed on the name of the key.
 const keyPressed: Record<string, boolean> = {}
@@ -12,7 +13,7 @@ let lastSentTime: number = Date.now()
 
 export const DEAD_ZONE = 0.25
 // the amount the camera can rotate to keep up with a turning player
-export const CAMERA_ROTATE = 0.01
+export const CAMERA_ROTATE = 0.05
 // The interval that we send a controls action - need to leave space
 // to send an immediate update should we get blocked
 export const CONTROLS_SEND_INTERVAL = 150
@@ -24,6 +25,10 @@ export function setupInput() {
   window.addEventListener("keydown", (e) => {
     // record key state
     keyPressed[e.key] = true
+
+    if (e.key === " ") {
+      console.log(getLocalCharacter3D()?.model.position)
+    }
   })
 
   window.addEventListener("keyup", (e) => {

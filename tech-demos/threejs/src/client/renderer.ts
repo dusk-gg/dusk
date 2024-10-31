@@ -6,10 +6,11 @@ import {
   Scene,
   WebGLRenderer,
 } from "three"
-import { getCamera, updateCamera } from "./camera"
+import { getCamera, rotateCameraY, rotateCameraZ, updateCamera } from "./camera"
 import { updateCharacterPerFrame } from "./character"
 import { updateInput } from "./input"
-import { getLocalCharacter3D } from "./client"
+import { getLocalCharacter3D } from "../client"
+import { getShadowingLightGroup } from "./lights"
 
 const scene: Scene = new Scene()
 const renderer = new WebGLRenderer({
@@ -19,6 +20,9 @@ const renderer = new WebGLRenderer({
 const FPS = 30
 let lastWindowWidth = 0
 let lastWindowHeight = 0
+let mouseX = 0
+let mouseY = 0
+let mouseDown = false
 
 export function getScene() {
   return scene
@@ -41,6 +45,9 @@ function render() {
   updateInput()
   const localPlayer = getLocalCharacter3D()
   if (localPlayer) {
+    getShadowingLightGroup().position.x = localPlayer.model.position.x
+    getShadowingLightGroup().position.z = localPlayer.model.position.z
+
     updateCamera(localPlayer)
   }
   updateCharacterPerFrame(1 / FPS)
@@ -64,6 +71,50 @@ export function setupRenderer() {
   const skyBlue = 0x87ceeb
   scene.background = new Color(skyBlue)
   scene.fog = new FogExp2(skyBlue, 0.02)
+
+  // setup dragging off the joystick to move the camera
+  const touchDevice = "ontouchstart" in document.documentElement
+  if (touchDevice) {
+    renderer.domElement.addEventListener("touchstart", (e) => {
+      mouseX = e.targetTouches[0].clientX
+      mouseY = e.targetTouches[0].clientY
+      mouseDown = true
+    })
+    renderer.domElement.addEventListener("touchend", () => {
+      mouseDown = false
+    })
+    renderer.domElement.addEventListener("touchmove", (e) => {
+      if (mouseDown) {
+        const dx = e.targetTouches[0].clientX - mouseX
+        const dy = e.targetTouches[0].clientY - mouseY
+        mouseX = e.targetTouches[0].clientX
+        mouseY = e.targetTouches[0].clientY
+
+        rotateCameraZ(dy * 0.01)
+        rotateCameraY(dx * 0.01)
+      }
+    })
+  } else {
+    renderer.domElement.addEventListener("mousedown", (e) => {
+      mouseX = e.clientX
+      mouseY = e.clientY
+      mouseDown = true
+    })
+    renderer.domElement.addEventListener("mouseup", () => {
+      mouseDown = false
+    })
+    renderer.domElement.addEventListener("mousemove", (e) => {
+      if (mouseDown) {
+        const dx = e.clientX - mouseX
+        const dy = e.clientY - mouseY
+        mouseX = e.clientX
+        mouseY = e.clientY
+
+        rotateCameraZ(dy * 0.01)
+        rotateCameraY(dx * 0.01)
+      }
+    })
+  }
 
   setInterval(() => {
     render()

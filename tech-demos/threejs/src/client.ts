@@ -1,10 +1,10 @@
-import "./styles.css"
+import "./client/styles.css"
 
-import { setupRenderer } from "./renderer"
-import { setupModels } from "./models"
-import { setupCamera } from "./camera"
-import { setupLights } from "./lights"
-import { setupWorld } from "./world"
+import { setupRenderer } from "./client/renderer"
+import { setupModels } from "./client/models"
+import { setupCamera } from "./client/camera"
+import { setupLights } from "./client/lights"
+import { setupWorld } from "./client/world"
 import {
   Character3D,
   createCharacter3D,
@@ -12,8 +12,8 @@ import {
   getCurrentCharacterIds,
   removeCharacter3D,
   updateCharacter3DFromLogic,
-} from "./character"
-import { setupInput } from "./input"
+} from "./client/character"
+import { setupInput } from "./client/input"
 
 let localPlayerCharacter: Character3D
 

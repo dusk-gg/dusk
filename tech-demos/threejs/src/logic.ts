@@ -1,33 +1,16 @@
 import type { PlayerId, RuneClient } from "rune-sdk"
-
-export const CHARACTER_MODEL_COUNT = 10
-export const LOGIC_FPS = 10
-export const MOVE_SPEED = 2 / LOGIC_FPS
-
-export type World = number[]
-
-export type Controls = {
-  x: number
-  y: number
-  cameraAngle: number
-}
-
-export type Vec3 = {
-  x: number
-  y: number
-  z: number
-}
-
-export type Character = {
-  id: string
-  type: number
-  position: Vec3
-  angle: number
-  speed: number
-}
+import {
+  CHARACTER_MODEL_COUNT,
+  MOVE_SPEED_PER_FRAME,
+  LOGIC_FPS,
+  MOVE_SPEED,
+} from "./shared/constants"
+import { Controls } from "./shared/controls"
+import { Character, Vec3 } from "./shared/types"
+import { createGameMap, GameMap } from "./shared/map"
 
 export interface GameState {
-  world: World
+  map: GameMap
   controls: Record<PlayerId, Controls>
   characters: Character[]
 }
@@ -69,20 +52,20 @@ export function getNewPositionAndAngle(
   }
   result.angle = -(controls.cameraAngle - Math.atan2(-controls.x, controls.y))
   if (controls.x < 0) {
-    result.pos.x += dir.z * MOVE_SPEED * Math.abs(controls.x)
-    result.pos.z -= dir.x * MOVE_SPEED * Math.abs(controls.x)
+    result.pos.x += dir.z * MOVE_SPEED_PER_FRAME * Math.abs(controls.x)
+    result.pos.z -= dir.x * MOVE_SPEED_PER_FRAME * Math.abs(controls.x)
   }
   if (controls.x > 0) {
-    result.pos.x -= dir.z * MOVE_SPEED * Math.abs(controls.x)
-    result.pos.z += dir.x * MOVE_SPEED * Math.abs(controls.x)
+    result.pos.x -= dir.z * MOVE_SPEED_PER_FRAME * Math.abs(controls.x)
+    result.pos.z += dir.x * MOVE_SPEED_PER_FRAME * Math.abs(controls.x)
   }
   if (controls.y < 0) {
-    result.pos.x -= dir.x * MOVE_SPEED * Math.abs(controls.y)
-    result.pos.z -= dir.z * MOVE_SPEED * Math.abs(controls.y)
+    result.pos.x -= dir.x * MOVE_SPEED_PER_FRAME * Math.abs(controls.y)
+    result.pos.z -= dir.z * MOVE_SPEED_PER_FRAME * Math.abs(controls.y)
   }
   if (controls.y > 0) {
-    result.pos.x += dir.x * MOVE_SPEED * Math.abs(controls.y)
-    result.pos.z += dir.z * MOVE_SPEED * Math.abs(controls.y)
+    result.pos.x += dir.x * MOVE_SPEED_PER_FRAME * Math.abs(controls.y)
+    result.pos.z += dir.z * MOVE_SPEED_PER_FRAME * Math.abs(controls.y)
   }
   return result
 }
@@ -93,7 +76,7 @@ Rune.initLogic({
   updatesPerSecond: LOGIC_FPS,
   setup: (allPlayerIds) => {
     const state: GameState = {
-      world: [],
+      map: createGameMap(),
       controls: {},
       characters: [],
     }
@@ -125,8 +108,7 @@ Rune.initLogic({
 
         character.speed =
           Math.sqrt(controls.x * controls.x + controls.y * controls.y) *
-          MOVE_SPEED *
-          LOGIC_FPS
+          MOVE_SPEED
       } else if (character) {
         character.speed = 0
       }

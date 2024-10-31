@@ -2,7 +2,8 @@ import { AnimationMixer, Object3D } from "three"
 import * as SkeletonUtils from "three/addons/utils/SkeletonUtils.js"
 import { getCharacterModel } from "./models"
 import { getScene } from "./renderer"
-import { Character, Vec3 } from "./logic"
+import { Vec3, Character } from "../shared/types"
+import { TURN_SPEED } from "../shared/constants"
 
 type Anims = "walk" | "idle" | "static" | "jump"
 
@@ -30,7 +31,12 @@ export function updateCharacterPerFrame(delta: number) {
 
     // interpolate the angle and position of the local
     // model to the logic state
-    c.model.rotation.y = lerpAngle(delta, c.model.rotation.y, c.targetAngle, 10)
+    c.model.rotation.y = lerpAngle(
+      delta,
+      c.model.rotation.y,
+      c.targetAngle,
+      TURN_SPEED
+    )
 
     const dir = getDirection(c.model.rotation.y)
     c.model.position.x = lerp(

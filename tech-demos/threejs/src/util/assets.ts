@@ -1,6 +1,6 @@
 // Easy accessor for assets via name rather than static
 // import. Makes it easier to manage assets
-const ALL_ASSETS = import.meta.glob("./assets/**/*", {
+const ALL_ASSETS = import.meta.glob("../assets/**/*", {
   query: "?url",
   import: "default",
   eager: true,
@@ -9,7 +9,7 @@ const ALL_ASSETS = import.meta.glob("./assets/**/*", {
 const ASSETS: Record<string, string> = {}
 
 for (const key in ALL_ASSETS) {
-  ASSETS[key.substring("./assets/".length)] = ALL_ASSETS[key]
+  ASSETS[key.substring("../assets/".length)] = ALL_ASSETS[key]
 }
 
 export function getAssetUrl(ref: string) {
