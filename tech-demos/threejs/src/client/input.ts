@@ -1,12 +1,11 @@
 import { Controls } from "../shared/controls"
 import { getCameraAngle, rotateCameraY } from "./camera"
-import { getLocalCharacter3D } from "../client"
 import { getJoystickState } from "./joystick"
 
 // the state of the keyboard keyed on the name of the key.
 const keyPressed: Record<string, boolean> = {}
 // to be sent when we change the controls
-let lastSentControls: Controls = { x: 0, y: 0, cameraAngle: 0 }
+let lastSentControls: Controls = { x: 0, y: 0, cameraAngle: 0, jump: false }
 // The time at which the last action for control update was sent. We keep this
 // less than 10 a second but override it if movement is blocked
 let lastSentTime: number = Date.now()
@@ -18,6 +17,8 @@ export const CAMERA_ROTATE = 0.05
 // to send an immediate update should we get blocked
 export const CONTROLS_SEND_INTERVAL = 150
 
+export let jump: boolean = false
+
 /**
  * Setup the input event listener
  */
@@ -25,15 +26,18 @@ export function setupInput() {
   window.addEventListener("keydown", (e) => {
     // record key state
     keyPressed[e.key] = true
-
-    if (e.key === " ") {
-      console.log(getLocalCharacter3D()?.model.position)
-    }
   })
 
   window.addEventListener("keyup", (e) => {
     // record key state
     keyPressed[e.key] = false
+  })
+
+  document.getElementById("jump")?.addEventListener("mousedown", () => {
+    jump = true
+  })
+  document.getElementById("jump")?.addEventListener("touchstart", () => {
+    jump = true
   })
 }
 
@@ -49,6 +53,7 @@ export function updateInput() {
     x: 0,
     y: 0,
     cameraAngle: getCameraAngle(),
+    jump: isKeyDown(" ") || jump,
   }
 
   if (isKeyDown("a") || joystickState.x < -DEAD_ZONE) {
@@ -74,10 +79,12 @@ export function updateInput() {
   if (
     lastSentControls.x !== currentControls.x ||
     lastSentControls.y !== currentControls.y ||
-    lastSentControls.cameraAngle !== currentControls.cameraAngle
+    lastSentControls.cameraAngle !== currentControls.cameraAngle ||
+    lastSentControls.jump !== currentControls.jump
   ) {
     if (
       Date.now() - lastSentTime > CONTROLS_SEND_INTERVAL ||
+      currentControls.jump || // send jump instantly
       (currentControls.x === 0 &&
         currentControls.y === 0 &&
         (lastSentControls.x !== 0 || lastSentControls.y !== 0))
@@ -85,6 +92,7 @@ export function updateInput() {
       Rune.actions.update(currentControls)
       lastSentControls = currentControls
       lastSentTime = Date.now()
+      jump = false
     }
   }
 }

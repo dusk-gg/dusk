@@ -1,28 +1,43 @@
-import { AnimationMixer, Object3D } from "three"
+import {
+  AnimationMixer,
+  CanvasTexture,
+  Mesh,
+  MeshBasicMaterial,
+  Object3D,
+  PlaneGeometry,
+} from "three"
 import * as SkeletonUtils from "three/addons/utils/SkeletonUtils.js"
 import { getCharacterModel } from "./models"
 import { getScene } from "./renderer"
 import { Vec3, Character } from "../shared/types"
-import { TURN_SPEED } from "../shared/constants"
+import { LOGIC_FPS, TURN_SPEED } from "../shared/constants"
+import { getCamera } from "./camera"
 
-type Anims = "walk" | "idle" | "static" | "jump"
+type Anims = "walk" | "idle" | "static" | "jump" | "fall"
 
 export type Character3D = {
   id: string
   type: number
   model: Object3D
+  namePlate: Object3D
   mixer: AnimationMixer
   targetPosition: Vec3
   targetAngle: number
-  speed: number
+  lastMovementSpeed: number
   anim: Anims
+  lastVelocityY: number
+  velocityY: number
 }
 
 const clientSideCharacters: Record<string, Character3D> = {}
 
 export function updateCharacterPerFrame(delta: number) {
   Object.values(clientSideCharacters).forEach((c) => {
-    if (c.speed !== 0) {
+    if (c.velocityY > 0) {
+      playAnimation(c, "jump")
+    } else if (c.velocityY < 0) {
+      playAnimation(c, "fall")
+    } else if (c.lastMovementSpeed !== 0) {
       playAnimation(c, "walk")
     } else {
       playAnimation(c, "idle")
@@ -43,14 +58,28 @@ export function updateCharacterPerFrame(delta: number) {
       delta * Math.abs(dir.x),
       c.model.position.x,
       c.targetPosition.x,
-      c.speed
+      c.lastMovementSpeed
     )
     c.model.position.z = lerp(
       delta * Math.abs(dir.z),
       c.model.position.z,
       c.targetPosition.z,
-      c.speed
+      c.lastMovementSpeed
     )
+    c.model.position.y = lerp(
+      delta,
+      c.model.position.y,
+      c.targetPosition.y,
+      // we want to make sure even if the velocity has changed then
+      // we complete the left
+      Math.max(c.velocityY > 0 ? 0 : 3, Math.abs(c.velocityY) * LOGIC_FPS)
+    )
+
+    // finally move the name plate to face the camera and be at the player position
+    c.namePlate.position.x = c.model.position.x
+    c.namePlate.position.y = c.model.position.y + 0.8
+    c.namePlate.position.z = c.model.position.z
+    c.namePlate.quaternion.copy(getCamera().quaternion)
   })
 }
 
@@ -81,14 +110,20 @@ export function createCharacter3D(data: Character): Character3D {
     mixer: new AnimationMixer(modelInstance),
     targetPosition: data.position,
     targetAngle: data.angle,
-    speed: 0,
+    lastMovementSpeed: 0,
+    lastVelocityY: 0,
+    velocityY: 0,
     anim: "static",
+    namePlate: createText(data.id),
   }
+  parent.position.set(data.position.x, data.position.y, data.position.z)
+  parent.rotation.y = data.angle
 
   playAnimation(character, "idle")
   clientSideCharacters[data.id] = character
 
   getScene().add(parent)
+  getScene().add(character.namePlate)
   return character
 }
 
@@ -96,6 +131,7 @@ export function removeCharacter3D(id: string): void {
   const character = clientSideCharacters[id]
   if (character) {
     character.model.removeFromParent()
+    character.namePlate.removeFromParent()
     delete clientSideCharacters[id]
   }
 }
@@ -113,7 +149,8 @@ export function updateCharacter3DFromLogic(data: Character): void {
   if (char) {
     char.targetAngle = data.angle
     char.targetPosition = data.position
-    char.speed = data.speed
+    char.lastMovementSpeed = data.lastMovementSpeed
+    char.velocityY = data.velocityY
   }
 }
 
@@ -150,4 +187,41 @@ function lerp(delta: number, current: number, target: number, speed: number) {
 
 function getDirection(angle: number): Vec3 {
   return { x: -Math.sin(angle), y: 0, z: Math.cos(angle) }
+}
+
+function createText(playerId: string): Mesh {
+  // create a base plane to hide any gaps in the floor
+  const geometry = new PlaneGeometry(1, 1)
+
+  const canvas = document.createElement("canvas")
+  canvas.width = 256
+  canvas.height = 256
+  const ctx = canvas.getContext("2d")
+  if (ctx) {
+    const size = 32
+    ctx.scale(1, 1)
+    ctx.font = size + "px Helvetica"
+    ctx.textAlign = "center"
+    ctx.fillStyle = "black"
+    ctx.fillText(
+      Rune.getPlayerInfo(playerId).displayName,
+      canvas.width / 2 + 3,
+      size * 2 + 3
+    )
+    ctx.fillStyle = "white"
+    ctx.fillText(
+      Rune.getPlayerInfo(playerId).displayName,
+      canvas.width / 2,
+      size * 2
+    )
+  }
+
+  const material = new MeshBasicMaterial({
+    map: new CanvasTexture(canvas),
+    transparent: true,
+  })
+  const textPlane = new Mesh(geometry, material)
+  textPlane.position.y = 0.8
+
+  return textPlane
 }

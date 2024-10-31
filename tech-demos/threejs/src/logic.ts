@@ -4,10 +4,13 @@ import {
   MOVE_SPEED_PER_FRAME,
   LOGIC_FPS,
   MOVE_SPEED,
+  MAX_STEP_UP,
+  GRAVITY,
+  JUMP_POWER,
 } from "./shared/constants"
 import { Controls } from "./shared/controls"
 import { Character, Vec3 } from "./shared/types"
-import { createGameMap, GameMap } from "./shared/map"
+import { createGameMap, GameMap, getHeightAt } from "./shared/map"
 
 export interface GameState {
   map: GameMap
@@ -27,11 +30,36 @@ function addCharacter(id: string, state: GameState) {
   const char: Character = {
     id,
     type: Math.floor(Math.random() * CHARACTER_MODEL_COUNT),
-    position: { x: 0, y: 0, z: 0 },
-    angle: 0,
-    speed: 0,
+    position: { x: 50, y: 0, z: 50 },
+    angle: -Math.PI / 2,
+    lastMovementSpeed: 0,
+    velocityY: 0,
   }
   state.characters.push(char)
+}
+
+function findHeightAt(game: GameState, x: number, z: number) {
+  let maxHeight = 0
+  const characterSize = 0.5
+  const step = characterSize / 5
+  for (
+    let xoffset = -characterSize / 2;
+    xoffset <= characterSize / 2;
+    xoffset += step
+  ) {
+    for (
+      let zoffset = -characterSize / 2;
+      zoffset <= characterSize / 2;
+      zoffset += step
+    ) {
+      maxHeight = Math.max(
+        maxHeight,
+        getHeightAt(game.map, x + xoffset, z + zoffset)
+      )
+    }
+  }
+
+  return maxHeight
 }
 
 export function getDirectionFromAngle(angle: number): Vec3 {
@@ -100,17 +128,53 @@ Rune.initLogic({
       const controls = game.controls[playerId]
       const character = game.characters.find((c) => c.id === playerId)
 
+      if (character) {
+        const height = findHeightAt(
+          game,
+          character.position.x,
+          character.position.z
+        )
+        // handle falling
+        if (height < character.position.y) {
+          character.velocityY -= GRAVITY
+        }
+        // handle jumping
+        if (
+          controls &&
+          height === character.position.y &&
+          controls.jump &&
+          character.velocityY === 0
+        ) {
+          character.velocityY = JUMP_POWER
+        }
+
+        character.position.y += character.velocityY
+        // hit ground
+        if (character.position.y < height) {
+          character.position.y = height
+          character.velocityY = 0
+        }
+      }
+
       if (controls && (controls.x !== 0 || controls.y !== 0) && character) {
         const newPos = getNewPositionAndAngle(controls, character.position)
-        character.position.x = newPos.pos.x
-        character.position.z = newPos.pos.z
+        const height = findHeightAt(game, newPos.pos.x, newPos.pos.z)
+        const step = height - character.position.y
+        if (step < MAX_STEP_UP) {
+          // not blocked
+          if (step > 0) {
+            // stepping up
+            character.position.y = height
+          }
+          character.position.x = newPos.pos.x
+          character.position.z = newPos.pos.z
+          character.lastMovementSpeed =
+            Math.sqrt(controls.x * controls.x + controls.y * controls.y) *
+            MOVE_SPEED
+        }
         character.angle = newPos.angle
-
-        character.speed =
-          Math.sqrt(controls.x * controls.x + controls.y * controls.y) *
-          MOVE_SPEED
       } else if (character) {
-        character.speed = 0
+        character.lastMovementSpeed = 0
       }
     }
   },

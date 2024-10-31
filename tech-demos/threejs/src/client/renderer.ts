@@ -11,13 +11,13 @@ import { updateCharacterPerFrame } from "./character"
 import { updateInput } from "./input"
 import { getLocalCharacter3D } from "../client"
 import { getShadowingLightGroup } from "./lights"
+import { RENDER_FPS } from "../shared/constants"
 
 const scene: Scene = new Scene()
 const renderer = new WebGLRenderer({
   powerPreference: "high-performance",
   antialias: true,
 })
-const FPS = 30
 let lastWindowWidth = 0
 let lastWindowHeight = 0
 let mouseX = 0
@@ -50,7 +50,7 @@ function render() {
 
     updateCamera(localPlayer)
   }
-  updateCharacterPerFrame(1 / FPS)
+  updateCharacterPerFrame(1 / RENDER_FPS)
   renderer.render(scene, getCamera())
 }
 
@@ -118,5 +118,5 @@ export function setupRenderer() {
 
   setInterval(() => {
     render()
-  }, 1000 / FPS)
+  }, 1000 / RENDER_FPS)
 }

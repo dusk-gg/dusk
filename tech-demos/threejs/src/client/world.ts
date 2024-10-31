@@ -1,4 +1,10 @@
-import { PlaneGeometry, Mesh, MeshLambertMaterial, RepeatWrapping } from "three"
+import {
+  PlaneGeometry,
+  Mesh,
+  MeshLambertMaterial,
+  RepeatWrapping,
+  DoubleSide,
+} from "three"
 import { getScene } from "./renderer"
 import { getAssetUrl } from "../util/assets"
 import { loadTexture } from "./models"
@@ -13,6 +19,7 @@ export async function setupWorld() {
   texture.repeat.set(50, 50)
   const material = new MeshLambertMaterial({
     map: texture,
+    side: DoubleSide,
   })
   const baseFloorPlane = new Mesh(geometry, material)
   baseFloorPlane.translateX(50)

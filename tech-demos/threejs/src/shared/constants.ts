@@ -3,3 +3,7 @@ export const LOGIC_FPS = 10
 export const MOVE_SPEED = 2
 export const MOVE_SPEED_PER_FRAME = MOVE_SPEED / LOGIC_FPS
 export const TURN_SPEED = 10
+export const MAX_STEP_UP = 0.2
+export const GRAVITY = 0.2
+export const JUMP_POWER = 0.5
+export const RENDER_FPS = 30

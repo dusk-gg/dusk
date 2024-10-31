@@ -19,7 +19,7 @@ export function setupCamera() {
 
 export function updateCamera(targetCharacter: Character3D) {
   // the offset from the ground the camera maintains
-  const cameraHeight = 1
+  const cameraHeight = 2
   // The distance from the target (look at)
   const cameraDistance = 4
   // The speed that the camera lerps at

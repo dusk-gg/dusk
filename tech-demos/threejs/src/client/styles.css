@@ -7,7 +7,7 @@ body {
 
 #joystick {
   position: absolute;
-  left: 5%;
+  left: 3%;
   bottom: 10%;
   width: 25vh;
   height: 25vh;
@@ -16,6 +16,17 @@ body {
 .back {
   background: rgba(0, 0, 0, 0.5);
 }
+
 .front {
   background: rgba(255, 255, 255, 0.5);
+}
+
+#jump {
+  width: 10vh;
+  height: 10vh;
+  position: absolute;
+  border-radius: 100%;
+  bottom: 17vh;
+  right: 8vh;
+  background: rgba(255, 255, 255, 0.2);
 }

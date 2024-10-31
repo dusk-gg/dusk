@@ -9,5 +9,6 @@ export type Character = {
   type: number
   position: Vec3
   angle: number
-  speed: number
+  lastMovementSpeed: number
+  velocityY: number
 }
