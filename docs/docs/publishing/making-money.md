@@ -14,7 +14,7 @@ You can focus entirely on what you do best — making great games!
 
 ## We Don’t Show Ads or Charge Our Players
 
-Rune doesn’t show ads or charge players. As a startup, we’re focused on encouraging developers to build great indie games on our platform. We believe it’s only fair to compensate the hard work of game developers through the Creator Fund, which is funded directly by Rune—ensuring developers receive 100% of what's available.
+Rune doesn’t show ads, charge players, or make any money from the games on our platform. As a startup, we’re focused on encouraging developers to build great indie games. We believe it’s only fair to compensate the hard work of game developers through the Creator Fund, which is funded directly by Rune—ensuring developers receive 100% of what's available.
 
 As the platform grows, we plan to introduce more ways for developers to earn and for players to opt into enhancements. Payouts will increase, and we’ll continually review our approach to ensure developers are treated fairly.
 
