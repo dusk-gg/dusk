@@ -1,3 +1,7 @@
+/**
+ * The core rendering loop and ThreeJS rendering. We run at
+ * 30 FPS for low end mobile devices to keep up
+ */
 import {
   ACESFilmicToneMapping,
   Color,
@@ -13,21 +17,46 @@ import { getLocalCharacter3D } from "../client"
 import { getShadowingLightGroup } from "./lights"
 import { RENDER_FPS } from "../shared/constants"
 
+// the main ThreeJS scene we're rendering
 const scene: Scene = new Scene()
+
+// the Three JS renderer
 const renderer = new WebGLRenderer({
   powerPreference: "high-performance",
   antialias: true,
 })
+
+// the last window width we've applied. Allows
+// for resizing the window when we're testing on web
 let lastWindowWidth = 0
+// the last window height we've applied. Allows
+// for resizing the window when we're testing on web
 let lastWindowHeight = 0
+// the last mouse/finger position recorded - used
+// for dragging the screen
 let mouseX = 0
+// the last mouse/finger position recorded - used
+// for dragging the screen
 let mouseY = 0
+// Record whether the user has currently touched/moused
+// the screen for dragging
 let mouseDown = false
 
+/**
+ * Get the main scene we're displaying so other parts
+ * of the game can add to it
+ *
+ * @returns The main ThreeJS scene being rendered
+ */
 export function getScene() {
   return scene
 }
 
+/**
+ * The core render loop responsible for updating the
+ * different parts of the game and rendering the scene
+ * with ThreeJS
+ */
 function render() {
   // resize the display if the game has been changed when
   // testing on the web
@@ -42,6 +71,7 @@ function render() {
     renderer.setSize(window.innerWidth, window.innerHeight)
   }
 
+  // update the different elements of the game
   updateInput()
   const localPlayer = getLocalCharacter3D()
   if (localPlayer) {
@@ -51,9 +81,14 @@ function render() {
     updateCamera(localPlayer)
   }
   updateCharacterPerFrame(1 / RENDER_FPS)
+
+  // render the game with ThreeJS
   renderer.render(scene, getCamera())
 }
 
+/**
+ * Setup the game's renderer in ThreeJS
+ */
 export function setupRenderer() {
   // tone mapping controls how the color of points in the
   // world is mapped to pixels on the screen. This tone mapping
@@ -65,9 +100,12 @@ export function setupRenderer() {
   // enable the shadow map rendering
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = PCFShadowMap
+
+  // add the renderer to the DOM
   renderer.setSize(window.innerWidth, window.innerHeight)
   document.body.appendChild(renderer.domElement)
 
+  // background color with a fog to the distance
   const skyBlue = 0x87ceeb
   scene.background = new Color(skyBlue)
   scene.fog = new FogExp2(skyBlue, 0.02)
@@ -116,6 +154,7 @@ export function setupRenderer() {
     })
   }
 
+  // render the scene every at the configured FPS
   setInterval(() => {
     render()
   }, 1000 / RENDER_FPS)

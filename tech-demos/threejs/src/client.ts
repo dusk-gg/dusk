@@ -1,10 +1,10 @@
 import "./client/styles.css"
 
-import { getScene, setupRenderer } from "./client/renderer"
-import { loadTexture, setupModels } from "./client/models"
+import { setupRenderer } from "./client/renderer"
+import { setupModels } from "./client/models"
 import { setupCamera } from "./client/camera"
 import { setupLights } from "./client/lights"
-import { setupWorld } from "./client/world"
+import { buildGameMap, setupWorld } from "./client/world"
 import {
   Character3D,
   createCharacter3D,
@@ -14,43 +14,29 @@ import {
   updateCharacter3DFromLogic,
 } from "./client/character"
 import { setupInput } from "./client/input"
-import {
-  GAME_MAP_HEIGHT,
-  GAME_MAP_WIDTH,
-  GameMap,
-  getHeightAt,
-} from "./shared/map"
-import {
-  BoxGeometry,
-  Mesh,
-  MeshLambertMaterial,
-  RepeatWrapping,
-  Texture,
-} from "three"
-import { getAssetUrl } from "./util/assets"
 
+// the local player's 3D character, used for camera focus
 let localPlayerCharacter: Character3D
-let builtGameMap: boolean = false
-let wallTexture: Texture
 ;(async () => {
+  // setup Three JS
   setupRenderer()
   setupCamera()
   setupLights()
 
-  wallTexture = await loadTexture(getAssetUrl("walltexture.png"))
-  wallTexture.wrapS = RepeatWrapping
-  wallTexture.wrapT = RepeatWrapping
-  wallTexture.center.set(0.5, 0.5)
-
+  // load our models and create the world
   await setupModels()
-  setupWorld()
+  await setupWorld()
+
+  // setup up the input event handling from the
+  // joystick and DOM elements
   setupInput()
 
+  // bootstrap the Rune SDK with our client code
   Rune.initClient({
     onChange: ({ game, yourPlayerId }) => {
-      if (!builtGameMap) {
-        buildGameMap(game.map)
-      }
+      // build the game map if we haven't already
+      buildGameMap(game.map)
+
       for (const char of game.characters) {
         // theres a new character we haven't got in out scene
         if (!getCharacter3D(char.id)) {
@@ -60,6 +46,7 @@ let wallTexture: Texture
           }
         }
 
+        // update the character based on the logic state
         updateCharacter3DFromLogic(char)
       }
       for (const id of getCurrentCharacterIds()) {
@@ -74,26 +61,4 @@ let wallTexture: Texture
 
 export function getLocalCharacter3D(): Character3D | undefined {
   return localPlayerCharacter
-}
-
-export function buildGameMap(map: GameMap): void {
-  builtGameMap = true
-
-  for (let x = 0; x < GAME_MAP_WIDTH; x++) {
-    for (let z = 0; z < GAME_MAP_HEIGHT; z++) {
-      const height = getHeightAt(map, x, z)
-      if (height) {
-        const geometry = new BoxGeometry(1, 1, 1)
-        const material = new MeshLambertMaterial({ map: wallTexture })
-        const cube = new Mesh(geometry, material)
-        cube.castShadow = true
-        cube.receiveShadow = true
-        cube.scale.y = height
-        cube.position.x = x + 0.5
-        cube.position.y = height / 2
-        cube.position.z = z + 0.5
-        getScene().add(cube)
-      }
-    }
-  }
 }
