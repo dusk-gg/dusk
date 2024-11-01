@@ -14,6 +14,8 @@ export function createGameMap(): GameMap {
   setHeightAt(map, 52, 52, 1)
   setHeightAt(map, 53, 52, 1)
   setHeightAt(map, 54, 52, 1)
+  setHeightAt(map, 51, 54, 1)
+  setHeightAt(map, 52, 54, 1)
 
   return map
 }

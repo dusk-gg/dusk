@@ -1,3 +1,7 @@
+/**
+ * Loading models in Three JS. We use MeshLambertMaterial for performance
+ * on mobile devices.
+ */
 import {
   Mesh,
   MeshLambertMaterial,
@@ -14,22 +18,23 @@ const gltfLoader = new GLTFLoader()
 // texture loader from threejs
 const textureLoader = new TextureLoader()
 
+// The collection of character models we've loaded
 const characterModels: GLTF[] = []
 
-function loadGLTF(
-  url: string,
-  cast: boolean = true,
-  receive: boolean = true
-): Promise<GLTF> {
+/**
+ * Load a GLTF model from the given URL
+ */
+function loadGLTF(url: string): Promise<GLTF> {
   console.log("Loading: ", url)
 
   return new Promise<GLTF>((resolve, reject) => {
     gltfLoader.load(
       url,
       (model) => {
+        // make every model loaded a shadow caster and receiver
         model.scene.traverse((child) => {
-          child.castShadow = cast
-          child.receiveShadow = receive
+          child.castShadow = true
+          child.receiveShadow = true
         })
         resolve(model)
       },
@@ -41,6 +46,12 @@ function loadGLTF(
   })
 }
 
+/**
+ * Load a texture from a URL into a Three JS texture
+ *
+ * @param url The URL to load from
+ * @returns The newly created texture object
+ */
 export function loadTexture(url: string): Promise<Texture> {
   return new Promise<Texture>((resolve, reject) => {
     textureLoader.load(
@@ -57,6 +68,13 @@ export function loadTexture(url: string): Promise<Texture> {
   })
 }
 
+/**
+ * Apply a texture to a model. The ThreeJS loaders make assumptions where
+ * referenced textures are so we need to manually apply them
+ *
+ * @param obj The object to be textured
+ * @param texture The texture to apply
+ */
 export function applyTexture(obj: Object3D, texture: Texture) {
   obj.traverse((node) => {
     if (node instanceof Mesh) {
@@ -64,15 +82,30 @@ export function applyTexture(obj: Object3D, texture: Texture) {
     }
   })
 }
+
+/**
+ * Retrieve one of the loaded models with a specific id/type
+ *
+ * @param id The ID of the model to retrieve
+ * @returns The model that was loaded
+ */
 export function getCharacterModel(id: number) {
   return characterModels[id]
 }
 
+/**
+ * Initialize the character models. They have been provided by the wonderful KenneyNL
+ *
+ * https://kenney.nl/assets/mini-characters-1
+ */
 export async function setupModels() {
   const promises = []
 
+  // load the texture independently as ThreeJS isn't able to find it
+  // as a referenced texture
   const texture = await loadTexture(getAssetUrl("models/Textures/colormap.png"))
   for (let i = 0; i < 6; i++) {
+    // the models are nicely organized so just look through (thanks Kenney!)
     const code = String.fromCharCode("a".charCodeAt(0) + i)
     const female = loadGLTF(
       getAssetUrl("models/character-female-" + code + ".glb")

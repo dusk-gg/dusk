@@ -1,5 +1,12 @@
-import nipplejs, { JoystickManager } from "nipplejs"
+/**
+ * NippleJS (https://github.com/yoannmoinet/nipplejs) is a great library
+ * for virtual/on-screen joysticks. This manages that joystick.
+ */
+import nipplejs, { Joystick, JoystickManager } from "nipplejs"
 
+/**
+ * The current state of the joystick axis
+ */
 export type JoystickState = {
   x: number
   y: number
@@ -8,19 +15,24 @@ export type JoystickState = {
 // the current state of the virtual joystick
 let joystickState = { x: 0, y: 0 }
 
+// setup the joyst
 const joystickDiv = document.getElementById("joystick") as HTMLDivElement
-let joystick: JoystickManager = nipplejs.create({
-  mode: "static",
-  zone: joystickDiv ?? document.body,
-  position: { left: "50%", bottom: "50%" },
-  threshold: 0.2,
-})
-let controller = joystick.get(0)
+let joystick: JoystickManager
+let controller: Joystick
 
 document.addEventListener("touchcancel", () => {
+  // if we get a touch cancel then we've moved off the game
+  // to another part of UI. Only way to clear this at the moment
+  // is to recreate the joystick
   resetJoystick()
 })
 
+/**
+ * Reset the joystick at init and should the state get
+ * incorrect based on touch cancel/
+ *
+ * https://github.com/yoannmoinet/nipplejs/issues/64
+ */
 export function resetJoystick() {
   if (joystick) {
     joystick.destroy()
@@ -48,31 +60,11 @@ export function resetJoystick() {
 }
 
 resetJoystick()
+// added this to clear out invalid initial states that
+// can happen on load
 setTimeout(() => {
   resetJoystick()
 }, 1000)
-
-/**
- * Display the joystick on screen. This actually adds the DOM
- * elements for the joystick to the screen.
- */
-export function showJoystick(): void {
-  if (controller) {
-    controller.add()
-  }
-  joystickDiv.style.pointerEvents = "all"
-}
-
-/**
- * Hide the joystick on screen. This actually removes the DOM
- * elements for the joystick to the screen.
- */
-export function hideJoystick(): void {
-  if (controller) {
-    controller.remove()
-  }
-  joystickDiv.style.pointerEvents = "none"
-}
 
 /**
  * Get the current position of the joystick

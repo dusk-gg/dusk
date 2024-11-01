@@ -32,7 +32,6 @@ import { getAssetUrl } from "./util/assets"
 let localPlayerCharacter: Character3D
 let builtGameMap: boolean = false
 let wallTexture: Texture
-
 ;(async () => {
   setupRenderer()
   setupCamera()

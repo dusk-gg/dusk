@@ -1,3 +1,6 @@
+/**
+ * ThreeJS lights for the scene
+ */
 import { AmbientLight, DirectionalLight, Object3D } from "three"
 import { getScene } from "./renderer"
 
@@ -15,7 +18,9 @@ export const SHADOW_MAP_BOUNDS = 7
 // the light group containing any shadow generating lights so we
 // can move them with the camera to update the shadow map
 let lightGroup: Object3D
+// The directional light that gives shading and shadows
 let directionalLight: DirectionalLight
+// The ambient to brighten the scene
 let ambientLight: AmbientLight
 
 /**
