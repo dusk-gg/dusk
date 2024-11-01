@@ -12,15 +12,11 @@ We're passionate about supporting indie game devs in making awesome multiplayer 
 
 You can focus entirely on what you do best — making great games!
 
-## How do we Make Money?
+## We Don’t Show Ads or Charge Our Players
 
-The simple answer is: we don’t. We don’t run ads on your games or make money from players. Rune is an early-stage startup focused on bridging the gap between indie game developers and our large player base. 
-
-Currently, payouts are funded directly by Rune, meaning developers receive 100% of what’s available. We want to encourage developers to create great games on the platform to help it grow, and we believe it's only fair to offer compensation in return for their effort (much like we do with our [Open Source Grants](https://github.com/rune/rune/tree/staging/open-source-grant)).
+Rune doesn’t show ads or charge players. As a startup, we’re focused on encouraging developers to build great indie games on our platform. We believe it’s only fair to compensate the hard work of game developers through the Creator Fund, which is funded directly by Rune—ensuring developers receive 100% of what's available.
 
 As the platform grows, we plan to introduce more ways for developers to earn and for players to opt into enhancements. Payouts will increase, and we’ll continually review our approach to ensure developers are treated fairly.
-
-For now, it’s all about the games!
 
 ## Payouts based on Metrics
 
