@@ -23,7 +23,7 @@
     "rune-games-cli": "7.8.15",
     "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-rune": "2.0.3",
+    "eslint-plugin-rune": "2.1.0",
     "eslint-plugin-eslint-plugin": "^6.2.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^17.9.0",
