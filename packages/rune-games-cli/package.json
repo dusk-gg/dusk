@@ -1,6 +1,6 @@
 {
   "name": "rune-games-cli",
-  "version": "7.8.15",
+  "version": "7.8.16",
   "description": "CLI to upload your games to Rune",
   "license": "MIT",
   "keywords": [
@@ -50,7 +50,7 @@
     "date-fns": "2.29.1",
     "rune-sdk": "^4.25.0",
     "eslint": "^9.7.0",
-    "eslint-plugin-rune": "^2.0.3",
+    "eslint-plugin-rune": "^2.1.0",
     "figures": "4.0.1",
     "form-data": "4.0.0",
     "glob": "8.0.3",
