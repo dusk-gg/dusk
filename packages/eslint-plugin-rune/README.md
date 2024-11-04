@@ -1,6 +1,6 @@
 # eslint-plugin-rune
 
-This package is a collection of rules and configuration for writing safe logic code for the Multiplayer SDK.
+This package is a collection of rules and configuration for writing safe logic code for the Multiplayer SDK. It ensures that the JS functions are pure and follows the other [server-side logic rules](https://developers.rune.ai/docs/advanced/server-side-logic).
 
 ## Documentation
 
