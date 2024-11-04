@@ -4,7 +4,7 @@ sidebar_position: 61
 
 # Real-Time Games
 
-Rune synchronizes clocks across clients + server to easily add time-based game logic. You can get the synchronized time using `Rune.gameTime()` and make fast-paced games with an `update()` loop running many times pr. second.
+Rune synchronizes clocks across clients + server to easily add time-based game logic. You can get the synchronized time using `Rune.gameTime()` or `Rune.worldTime()` and make fast-paced games with an `update()` loop running many times pr. second.
 
 ## Game Time {#game-time}
 
@@ -48,6 +48,25 @@ Rune.initLogic({
       }
     },
   },
+})
+
+```
+
+## World time {#world-time}
+
+To track time outside the game, Rune exposes `Rune.worldTime()`. This function returns a timestamp in milliseconds since the epoch. Using this value allows to build daily challenges, time-based events. `Rune.worldTime()` has 1 second precision.
+
+```javascript
+// logic.js
+
+Rune.initLogic({
+    setup: () => {
+        return {
+          holidaysEvent:
+            Rune.worldTime() > new Date(2024, 12, 20).getTime() &&
+            Rune.worldTime() < new Date(2025, 1, 7).getTime(),
+        }
+    },
 })
 
 ```

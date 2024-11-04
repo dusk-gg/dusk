@@ -101,15 +101,15 @@ How many times `update` function should be executed per second. Allowed values 1
 
 How many milliseconds user action is delayed before run locally. Allowed values 0-250. Default value 25. Higher values will mean that players are more in sync with each other (i.e. fewer rollbacks), but will feel less snappy locally as it takes longer for a player's actions to be reflected on their screen.
 
-### `landscape?: boolean` {#landscape-boolean}
+#### `landscape?: boolean` {#landscape-boolean}
 
 Setting `landscape` to true will make your game appear in landscape orientation. A game can only be in portrait or landscape mode.
 
-### `persistPlayerData?: boolean` {#persistplayerdata-boolean}
+#### `persistPlayerData?: boolean` {#persistplayerdata-boolean}
 
 Setting `persistPlayerData` to true will enable storing player data across game sessions. Check out [Persisted Data](advanced/persisted-data.md).
 
-### `reactive?: boolean` {#reactive-boolean}
+#### `reactive?: boolean` {#reactive-boolean}
 
 Default `true`. Setting `reactive` to false will improve game logic performance, but disable referential equality in game state passed to `onChange` callback (e.g. `game`).
 
@@ -172,7 +172,7 @@ Only one of `players` and `everyone` can be provided at the same time.
 
 `everyone` allows to assign the same result for every player. Providing a score value shows a team score game over popup.
 
-### `minimizePopUp?: boolean` {#minimizepopup-boolean}
+#### `minimizePopUp?: boolean` {#minimizepopup-boolean}
 
 Set to `true` if you want to show the game over popup as a small bar at the bottom of the screen. This is useful if your game has its own custom end game state.
 
@@ -183,6 +183,10 @@ Optional. Set to `true` if you want to instruct Rune to delay showing of the gam
 ### `Rune.gameTime()` {#runegametime}
 
 Returns the amount of milliseconds that have passed since the start of the game. See [Using Time in your Game](advanced/real-time-games.md#game-time).
+
+### `Rune.worldTime()` {#runeworldtime}
+
+Returns the amount of milliseconds since the start of epoch. See [Using Time in your Game](advanced/real-time-games.md#world-time).
 
 ## Client {#client}
 
@@ -269,6 +273,10 @@ Opens invite modal inside the Rune app. Useful if you want to incentivize player
 ### `Rune.gameTime()` {#runegametime-1}
 
 Returns the amount of milliseconds that have passed since the start of the game. See [Using Time in your Game](advanced/real-time-games.md#game-time).
+
+### `Rune.worldTime()` {#runeworldtime}
+
+Returns the amount of milliseconds since the start of epoch. See [Using Time in your Game](advanced/real-time-games.md#world-time).
 
 ### `Rune.getPlayerInfo(playerId)` {#rune-get-player-info}
 
