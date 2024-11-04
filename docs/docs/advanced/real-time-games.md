@@ -56,6 +56,8 @@ Rune.initLogic({
 
 To track time outside the game, Rune exposes `Rune.worldTime()`. This function returns a timestamp in milliseconds since the epoch. Using this value allows to build daily challenges, time-based events. `Rune.worldTime()` has 1 second precision.
 
+Comparing Rune.worldTime with real date example:
+
 ```javascript
 // logic.js
 
@@ -66,6 +68,45 @@ Rune.initLogic({
             Rune.worldTime() > new Date(2024, 12, 20).getTime() &&
             Rune.worldTime() < new Date(2025, 1, 7).getTime(),
         }
+    },
+})
+```
+
+
+Tracking time passed example:
+
+  ```javascript
+// logic.js
+function initPersistPlayer(
+    game,
+    playerId
+) {
+    if (Object.keys(game.persisted[playerId]).length === 0) {
+      game.persisted[playerId] = {
+        gameLastPlayedAt: Rune.worldTime(),
+      }
+    }
+}
+
+Rune.initLogic({
+    persistPlayerData: true,
+    setup: (allPlayerIds, {game}) => {
+      
+      allPlayerIds.forEach((playerId) => {
+          initPersistPlayer(game, playerId)
+        
+          const msSinceLastGame = Rune.worldTime() - game.persisted[playerId].gameLastPlayedAt
+          const timeInMinutesSinceLastGame = Math.floor(msSinceLastGame / 1000 / 60)
+          // Do something with timeInMinutesSinceLastGame (daily rewards, restore energy)
+      })
+      
+      return {...}
+    }, 
+    //Update gameLastPlayedAt for all players every second
+    update: ({ game }) => {
+      allPlayerIds.forEach((playerId) => {
+        game.persisted[playerId].gameLastPlayedAt = Rune.worldTime()
+      })
     },
 })
 
