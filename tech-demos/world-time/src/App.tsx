@@ -38,17 +38,18 @@ function App() {
       ) : (
         <>
           <div>You didn&#39;t tap the button for</div>
+          <div>World time</div>
           <div>
             {formatTime(
               (Rune.worldTime() - game.persisted[yourPlayerId].gameStartedAt!) /
                 1000
             )}
           </div>
-          <div>In game time</div>
+          <div>Game opened time</div>
           <div>
             {formatTime(game.persisted[yourPlayerId].inGameTimeInSeconds!)}
           </div>
-          <div>Current session</div>
+          <div>Current game session time</div>
           <div>{formatTime(game.sessionPlayTime[yourPlayerId])}</div>
         </>
       )}
