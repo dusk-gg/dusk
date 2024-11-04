@@ -5,6 +5,7 @@ import type {
 } from "rune-sdk"
 
 export type GameState = {
+  //This will store how long each player has been in the current game session. Game session ends by players leaving the game/restarting it.
   sessionPlayTime: Record<PlayerId, number>
 }
 
@@ -12,8 +13,11 @@ type GameActions = {
   tap: () => void
 }
 
+//These keys are optional because we delete them after game over is triggered
 type Persisted = {
+  //This will be used to know how much time the user has not clicked the button. We'll know it by comparing with Rune.worldTime()
   gameStartedAt?: number
+  //This value will be used to store number of seconds the game was opened. It will increase by 1 every time update runs. By default Rune runs 1 update function per second.
   inGameTimeInSeconds?: number
 }
 
@@ -26,6 +30,7 @@ declare global {
   const Rune: RuneClient<GameState, GameActions, Persisted>
 }
 
+//If we see that player doesn't have any persisted data, initialize it.
 function initPersistPlayer(
   game: Pick<GameStateWithPersisted, "persisted">,
   playerId: PlayerId
@@ -39,10 +44,12 @@ function initPersistPlayer(
 }
 
 Rune.initLogic({
+  //Enable player persistence
   persistPlayerData: true,
   minPlayers: 1,
   maxPlayers: 6,
   setup: (allPlayerIds, { game }) => {
+    //Initialize all players at the start of the room
     allPlayerIds.forEach((playerId) => {
       initPersistPlayer(game, playerId)
     })
@@ -62,6 +69,7 @@ Rune.initLogic({
     tap: (_, { playerId, game, allPlayerIds }) => {
       game.persisted[playerId] = {} as any
 
+      //Mark every user as won except the one that clicked the button
       Rune.gameOver({
         players: allPlayerIds.reduce(
           (acc, cur) => {
@@ -76,6 +84,7 @@ Rune.initLogic({
   },
   events: {
     playerJoined: (playerId, { game }) => {
+      //Initialize any player that joins the game
       initPersistPlayer(game, playerId)
       game.sessionPlayTime[playerId] = 0
     },
@@ -84,6 +93,7 @@ Rune.initLogic({
     },
   },
 
+  //Update runs 1 time per second. Here we update total in game time & current session time.
   update: ({ game, allPlayerIds }) => {
     allPlayerIds.forEach((playerId) => {
       game.persisted[playerId].inGameTimeInSeconds! += 1

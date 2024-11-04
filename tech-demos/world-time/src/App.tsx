@@ -15,6 +15,7 @@ export function formatTime(time: number) {
 
 function App() {
   const [game, setGame] = useState<GameStateWithPersisted>()
+  //Since game support up to 6 players, there won't be any spectators in the game.
   const [yourPlayerId, setYourPlayerId] = useState<PlayerId | undefined>()
 
   useEffect(() => {
