@@ -92,7 +92,17 @@ export async function validateGameFilesWithEval(
           globalThis.Math.__SDK_PRECISION_SET__ = true
           ${logicRunner}
           ${logicWithoutExports}
-          Rune.gameConfig
+          
+          const bindings = globalThis.RUNE_FUNCTION_PREFIX_getLogicRunnerBindings()
+          
+          if (!bindings) {
+            const invalidConfig = {}
+            
+            invalidConfig
+          } else {
+            bindings.getConfig()
+          }
+          
         `
       )
     : {}
