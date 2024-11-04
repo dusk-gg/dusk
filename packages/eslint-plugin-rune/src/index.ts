@@ -3,6 +3,9 @@ import * as globals from "globals"
 
 import { rules } from "./rules/index.js"
 
+const dateErrorMessage =
+  "Use Rune.gameTime()/Rune.worldTime(). Date is only used as helper for date manipulation and providing initial value is mandatory. See https://developers.rune.ai/docs/advanced/real-time-games for more info."
+
 const restrictedSyntaxBase = [
   {
     selector: "TryStatement",
@@ -22,6 +25,18 @@ const restrictedSyntaxBase = [
     message:
       "Regular expressions are stateful and might prevent Rune from working properly.",
   },
+  {
+    selector: "NewExpression[callee.name='Date'][arguments.length!=1]",
+    message: dateErrorMessage,
+  },
+  {
+    selector: "CallExpression[callee.name='Date'][arguments.length!=1]",
+    message: dateErrorMessage,
+  },
+  {
+    selector: "MemberExpression[object.name='Date'][property.name='now']",
+    message: dateErrorMessage,
+  },
 ]
 
 const restrictedGlobals = [
@@ -31,11 +46,6 @@ const restrictedGlobals = [
   "window",
   "global",
   "constructor",
-  {
-    name: "Date",
-    message:
-      "Use Rune.gameTime() instead, which keeps time synchronized across players.",
-  },
   "decodeURI",
   "decodeURIComponent",
   "encodeURI",
@@ -86,7 +96,7 @@ const restrictedGlobals = [
 const plugin = {
   meta: {
     name: "eslint-plugin-rune",
-    version: "2.0.2",
+    version: "2.1.0",
   },
   configs: {
     recommended: {},
