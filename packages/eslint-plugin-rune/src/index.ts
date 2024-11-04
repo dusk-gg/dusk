@@ -3,6 +3,9 @@ import * as globals from "globals"
 
 import { rules } from "./rules/index.js"
 
+const dateErrorMessage =
+  "Use Rune.gameTime()/Rune.worldTime(). Date is only used as helper for date manipulation and providing initial value is mandatory. See https://developers.rune.ai/docs/advanced/real-time-games for more info."
+
 const restrictedSyntaxBase = [
   {
     selector: "TryStatement",
@@ -24,18 +27,15 @@ const restrictedSyntaxBase = [
   },
   {
     selector: "NewExpression[callee.name='Date'][arguments.length!=1]",
-    message:
-      "Use Rune.gameTime()/Rune.worldTime(). Date is only used as helper for date manipulation and providing initial value is mandatory. See https://developers.rune.ai/docs/advanced/real-time-games for more info.",
+    message: dateErrorMessage,
   },
   {
     selector: "CallExpression[callee.name='Date'][arguments.length!=1]",
-    message:
-      "Use Rune.gameTime()/Rune.worldTime(). Date is only used as helper for date manipulation and providing initial value is mandatory. See https://developers.rune.ai/docs/advanced/real-time-games for more info.",
+    message: dateErrorMessage,
   },
   {
     selector: "MemberExpression[object.name='Date'][property.name='now']",
-    message:
-      "Use Rune.gameTime()/Rune.worldTime(). Date is only used as helper for date manipulation and providing initial value is mandatory. See https://developers.rune.ai/docs/advanced/real-time-games for more info.",
+    message: dateErrorMessage,
   },
 ]
 
