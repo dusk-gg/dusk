@@ -19,7 +19,7 @@ export function MultiplayerExamples({ data, techDemo }) {
           >
             Source
           </a>
-          {techDemo && (
+          {techDemo && !example.skipBlog && (
             <span>
               {" "}
               | <a href={`/blog/${example.slug}/`}>Blog</a>
