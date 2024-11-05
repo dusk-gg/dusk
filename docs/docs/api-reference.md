@@ -276,7 +276,7 @@ Returns the amount of milliseconds that have passed since the start of the game.
 
 ### `Rune.worldTime()` {#runeworldtime}
 
-Returns the amount of milliseconds since the start of epoch. See [Using Time in your Game](advanced/real-time-games.md#world-time).
+Returns the amount of milliseconds since the start of epoch with a precision of 1 second. See [Using Time in your Game](advanced/real-time-games.md#world-time).
 
 ### `Rune.getPlayerInfo(playerId)` {#rune-get-player-info}
 
