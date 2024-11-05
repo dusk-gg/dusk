@@ -54,7 +54,7 @@ Rune.initLogic({
 
 ## World time {#world-time}
 
-To track time outside the game, Rune exposes `Rune.worldTime()`. This function returns a timestamp in milliseconds since the epoch. Using this value allows to build daily challenges, time-based events. `Rune.worldTime()` has 1 second precision.
+To track time outside the game, Rune exposes `Rune.worldTime()`. This function returns a timestamp in milliseconds since the epoch. Using this value allows building daily challenges and time-based events. `Rune.worldTime()` has 1 second precision.
 
 Comparing Rune.worldTime with real date example:
 
