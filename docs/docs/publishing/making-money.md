@@ -36,7 +36,7 @@ The creator fund has four segments (T1, T2, T3, T4) determined by grouping the p
 
 ## Application and Monthly Payouts
 
-You can apply for the creator fund as soon as your games hit 100+ hours/month and a return rate of 5%. We'll do a quick review to check that there's nothing fishy going on and approve you within 5 business days.
+You can apply for the creator fund as soon as your games hit 100+ hours/month and a return rate of 5%. We'll do a quick review to check that there's nothing fishy going on and approve you within 5 business days. In the case that you have one popular game with a high return rate and other games with low return rates, you can apply using the return rate of your popular game.
 
 Your games earn credits each day based on the metrics described earlier on this page. We use this credits system so that in the future you can choose to use some credits for optional extra services like AI-powered gameplay if you like. When paying out to you, credits are automatically converted to dollars at a rate of 1 USD = 10000 credits.
 
