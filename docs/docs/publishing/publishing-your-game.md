@@ -9,7 +9,7 @@ sidebar_position: 1
 Use the [Rune CLI](publishing/cli.md) to upload your game to millions of players:
 
 ```bash
-npx rune-games-cli@latest upload
+npx rune@latest upload
 ```
 
 That's it! You can now [playtest](../playtesting/testing-in-app.md) your game with friends and others in the actual Rune app. To release your game to the larger Rune community, your game will need a [Game Preview](publishing/game-preview.md). We can make one for your game if you'd like.

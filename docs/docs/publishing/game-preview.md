@@ -18,7 +18,7 @@ The bottom 240 pixels of the game preview is where the text and dev info will be
 
 ## Update Preview {#update-preview}
 
-If you ever want to update your preview image, then just run `npx rune-games-cli@latest update-info`.
+If you ever want to update your preview image, then just run `npx rune@latest update-info`.
 
 ## Wanna Skip Making One? {#wanna-skip-making-one}
 
