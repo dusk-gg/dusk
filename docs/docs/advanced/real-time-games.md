@@ -49,14 +49,13 @@ Rune.initLogic({
     },
   },
 })
-
 ```
 
-## World time {#world-time}
+## World Time {#world-time}
 
-To track time outside the game, Rune exposes `Rune.worldTime()`. This function returns a timestamp in milliseconds since the epoch. Using this value allows building daily challenges and time-based events. `Rune.worldTime()` has 1 second precision.
+Rune exposes `Rune.worldTime()` to track time passed outside your game, which returns a timestamp in milliseconds since January 1, 1970. Using this value allows building e.g. daily challenges and time-based events. `Rune.worldTime()` has 1 second precision.
 
-Comparing Rune.worldTime with real date example:
+Here's how to use `Rune.worldTime()` to determine if the game is played during the winter holidays:
 
 ```javascript
 // logic.js
@@ -72,10 +71,11 @@ Rune.initLogic({
 })
 ```
 
-Tracking time passed example:
+And here's how you can use `Rune.worldTime()` to track the time since the player last played the game:
 
   ```javascript
 // logic.js
+
 function initPersistPlayer(
     game,
     playerId
@@ -110,7 +110,7 @@ Rune.initLogic({
 })
 ```
 
-For more examples of `Rune.gameTime()`, `Rune.worldTime()` usage check out our [time tech demo](https://github.com/rune/rune/tree/staging/tech-demos/world-time).
+For more examples of how to use `Rune.worldTime()`, check out our [time tech demo](https://github.com/rune/rune/tree/staging/tech-demos/world-time).
 
 
 ## Update Function {#update-function}
