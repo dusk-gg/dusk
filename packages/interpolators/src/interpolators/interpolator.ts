@@ -14,6 +14,11 @@ export function interpolator<
 
   return {
     update(params: { game: Dimensions; futureGame: Dimensions }) {
+      //@ts-expect-error
+      if ((game || futureGame || size) && !Rune._isOnChangeCalledByUpdate) {
+        return
+      }
+
       if (runValidation) {
         validateUpdateParams(params, size)
       }

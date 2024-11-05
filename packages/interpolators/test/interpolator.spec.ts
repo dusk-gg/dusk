@@ -27,6 +27,29 @@ describe("interpolator", () => {
     expect(instance.getPosition()).toEqual(4)
   })
 
+  it("should ignore calls done outside of update loop", () => {
+    const instance = interpolator()
+
+    global.Rune = {
+      msPerUpdate: 100,
+      timeSinceLastUpdate: () => 40,
+    } as any
+
+    instance.update({ game: 0, futureGame: 10 })
+
+    // @ts-expect-error
+    global.Rune._isOnChangeCalledByUpdate = false
+    instance.update({ game: 6, futureGame: 10 })
+
+    expect(instance.getPosition()).toEqual(4)
+
+    // @ts-expect-error
+    global.Rune._isOnChangeCalledByUpdate = true
+    instance.update({ game: 10, futureGame: 20 })
+
+    expect(instance.getPosition()).toEqual(14)
+  })
+
   it("should interpolate between the positions when provided with arrays", () => {
     const instance = interpolator()
 
