@@ -101,7 +101,7 @@ Rune.initLogic({
       
       return {...}
     }, 
-    //Update gameLastPlayedAt for all players every second
+    // Update gameLastPlayedAt for all players every second
     update: ({ game }) => {
       allPlayerIds.forEach((playerId) => {
         game.persisted[playerId].gameLastPlayedAt = Rune.worldTime()
