@@ -110,7 +110,7 @@ Rune.initLogic({
 })
 ```
 
-For more examples of `Rune.gameTime()`, `Rune.worldTime()` usage check out our [time tech demos](https://github.com/rune/rune/tree/staging/tech-demos/world-time).
+For more examples of `Rune.gameTime()`, `Rune.worldTime()` usage check out our [time tech demo](https://github.com/rune/rune/tree/staging/tech-demos/world-time).
 
 
 ## Update Function {#update-function}

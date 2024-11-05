@@ -83,3 +83,11 @@ yarn build
 cp -r dist/. ../../docs/static/_tech-demos/phaser
 perl -pe 's/multiplayer\.js/multiplayer-dev\.js/' dist/index.html > ../../docs/static/_tech-demos/phaser/index.html
 cd ..
+
+# World time
+cd world-time
+yarn
+yarn build
+cp -r dist/. ../../docs/static/_tech-demos/world-time
+perl -pe 's/multiplayer\.js/multiplayer-dev\.js/' dist/index.html > ../../docs/static/_tech-demos/world-time/index.html
+cd ..
