@@ -87,8 +87,12 @@ const initialGameRes: GameRes = {
 }
 
 async function getGameRes() {
+  const baseUrl = "https://tango-production.rune.ai/v1/public/games-top-10"
+  const urlParams = new URLSearchParams(window.location.search)
+  const dateStart = urlParams.get("dateStart")
+
   const res = await fetch(
-    "https://tango-production.rune.ai/v1/public/games-top-10"
+    `${baseUrl}${dateStart ? `?dateStart=${dateStart}` : ""}`
   )
   const json = await res.json()
 
