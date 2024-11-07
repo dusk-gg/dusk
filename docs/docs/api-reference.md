@@ -270,6 +270,10 @@ If you set `delayPopUp` to `true` in `Rune.gameOver()`, you should call this fun
 
 Opens invite modal inside the Rune app. Useful if you want to incentivize players to invite their friends.
 
+### `Rune.showShareImage(image)` {#runeshowshareimage}
+
+Opens image share modal inside the Rune app which allows the player to easily share your image with their friends. You can generate the image using canvas inside of your game. Image has to be base64-encoded PNG and it must contain Rune logo.
+
 ### `Rune.gameTime()` {#runegametime-1}
 
 Returns the amount of milliseconds that have passed since the start of the game. See [Using Time in your Game](advanced/real-time-games.md#game-time).
