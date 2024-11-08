@@ -348,7 +348,7 @@ describe("validateGameFiles", () => {
         ).resolves.toEqual({
           valid: false,
           errors: [
-            { message: "Game size must be less than 10MB" },
+            { message: "Game size must be less than 25MB" },
             { message: `${name} SDK must be the first script in index.html` },
           ],
           sdk: name,
