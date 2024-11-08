@@ -28,6 +28,8 @@ You will earn money based on:
 
 The specific amount of money earned for each of these metrics depends on the player regions (more info below). With payouts based on these three metrics, the creator fund supports great games that players love coming back to and want to share with their friends!
 
+We help you make games that are more easily sharable with built-in game links and sharing functionality like [Rune.showShareImage()](../api-reference.md#runeshowshareimage).
+
 ## Player Regions
 
 Games often have different localized prices by country and earn different amounts of money per player based on the geo. We incorporate this aspect into the creator fund by scaling the earnings for each metric depending on the player’s country.
@@ -47,7 +49,7 @@ At the beginning of each month, you'll receive a $ payout for the accrued credit
 Here's how many credits your game earns for each metric in each region:
 
 | Region | Player plays again next day | Player shares your game | Player plays for 1 hour |
-| ------ | --------------------------- | ----------------------- |-------------------------|
+| ------ | --------------------------- | ----------------------- | ----------------------- |
 | T1     | 35                          | 400                     | 5                       |
 | T2     | 22.75                       | 260                     | 3.25                    |
 | T3     | 14                          | 160                     | 2                       |
