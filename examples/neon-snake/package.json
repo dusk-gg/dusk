@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@pixi/react": "^7.1.1",
-    "rune-sdk": "^4.25.1",
+    "rune-sdk": "^4.25.2",
     "jotai": "^2.4.3",
     "pixi.js": "^7.3.2",
     "react": "^18.2.0",

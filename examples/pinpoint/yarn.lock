@@ -8515,10 +8515,10 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-rune-sdk@^4.25.1:
-  version "4.25.1"
-  resolved "https://registry.yarnpkg.com/rune-sdk/-/rune-sdk-4.25.1.tgz#6707518b5aaac56ad2525895132a194a206cb7b3"
-  integrity sha512-oCQxPucpeLwOFL95IA645mFTfvPBdExZ5+OGhsrfB4iW3QCZRpnxnUVSSS6TgEvABCNt9haHcYoJXUx2tvvjpA==
+rune-sdk@^4.25.2:
+  version "4.25.2"
+  resolved "https://registry.yarnpkg.com/rune-sdk/-/rune-sdk-4.25.2.tgz#3ec923bd1c188b261654f309a023d23d974be26b"
+  integrity sha512-SwpTN1H8Xi7hm+dLcfiFnPRMcy+469xY9tMvM2Y6d2+0YaIwKA5YSi9BHnLc+ZoN0x/Bl5PZnZgPytJBGwmmog==
   dependencies:
     "@eslint/eslintrc" "^3.1.0"
     "@eslint/js" "^9.7.0"

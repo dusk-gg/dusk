@@ -8,7 +8,7 @@ Amazing that you're considering adapting your game for multiplayer on Rune! 🥳
 
 We recommend you follow **approach 1** below, which will take care of any boilerplate and provide a nice development experience with Rune-specific ESLint & Vite plugins. You can quickly get a minimal multiplayer version of your game working, then add more game logic step-by-step. Alternatively, you can add the SDK manually.
 
-### Approach 1: Rune Template
+### Approach 1: Rune Template (recommended)
 
 Create a new Rune game project by running:
 
