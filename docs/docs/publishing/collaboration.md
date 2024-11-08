@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Collaboration
 
-When you create a game, you become an admin. As an admin, you can add other Rune users as team members with different roles: Playtester, Developer or Admin. Use `npx rune-games-cli@latest update-members` in your terminal to update the team for your game:
+When you create a game, you become an admin. As an admin, you can add other Rune users as team members with different roles: Playtester, Developer or Admin. Use `npx rune@latest update-members` in your terminal to update the team for your game:
 
 - List existing members
 - Invite new members using their Rune tag
