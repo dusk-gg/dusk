@@ -272,7 +272,7 @@ Opens invite modal inside the Rune app. Useful if you want to incentivize player
 
 ### `Rune.showShareImage(image)` {#runeshowshareimage}
 
-Opens image share modal inside the Rune app which allows the player to easily share your image with their friends. You can generate the image using canvas inside of your game. Image has to be base64-encoded PNG and it must contain Rune logo.
+Opens image share modal inside the Rune app with image provided by your game for easy sharing to other apps like WhatsApp and Twitter. You can generate the image using canvas inside your game. The provided image must be base64-encoded PNG and contain the Rune logo so others know where to find your game.
 
 <img src="/img/game-share-image-example.webp" alt="Game Share Image Modal" height="600" style={{height: '600px'}} />
 
