@@ -6,12 +6,9 @@ const version = process.argv[2]
 
 const examplesDir = path.resolve(__dirname, "../examples")
 const techDemosDir = path.resolve(__dirname, "../tech-demos")
-const templatesDir = path.resolve(
-  __dirname,
-  "../packages/rune-games-cli/templates"
-)
+const templatesDir = path.resolve(__dirname, "../packages/rune/templates")
 
-const cliDir = path.resolve(__dirname, "../packages/rune-games-cli")
+const cliDir = path.resolve(__dirname, "../packages/rune")
 
 //These example games also have sdk version inside html
 const gamesWithHtml = {
@@ -54,7 +51,7 @@ const techDemos = fs
   }))
 
 const cli = {
-  name: "rune-games-cli",
+  name: "rune",
   dir: cliDir,
   shouldInstall: true,
 }

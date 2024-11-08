@@ -1,3 +1,3 @@
-packages/rune-games-cli/__temp/
-packages/rune-games-cli/src/generated/
+packages/rune/__temp/
+packages/rune/src/generated/
 examples/tic-tac-toe/

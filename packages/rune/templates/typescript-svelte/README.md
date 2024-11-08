@@ -20,8 +20,7 @@ Runs the validation rules. You can read about them in the [docs on server-side l
 
 ### `npm run typecheck`
 
-Verifies that TypeScript is valid.
-
+Provides diagnostics checks for unused CSS & TypeScript compiler errors
 
 ## Learn More
 

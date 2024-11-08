@@ -9,7 +9,7 @@ For a smooth development experience use the `rune` CLI in your terminal.
 ## Install {#install}
 
 ```bash
-npm install -g rune-games-cli
+npm install -g rune
 ```
 
 Requires [Node.js](https://nodejs.org/en/download/) version 14.17 or above.

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "upload": "npm run build && npx rune-games-cli@latest upload",
+    "upload": "npm run build && npx rune@latest upload",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit"
   },

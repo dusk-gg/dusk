@@ -9,7 +9,7 @@ Build a multiplayer game for the [Rune platform](https://www.rune.ai) and its mi
 To get started, you only need to run one command:
 
 ```sh
-npx rune-games-cli@latest create
+npx rune@latest create
 ```
 After this, you'll have a multiplayer Tic Tac Toe game running.
 
