@@ -23,32 +23,37 @@ export function App() {
   }
 
   return (
-    <VersionCheckGate>
-      {cli.flags.version ? (
-        <Text>{packageJson.version}</Text>
-      ) : !command || command === "help" ? (
-        <Text>{cli.help}</Text>
-      ) : command === "logout" ? (
-        <Logout />
-      ) : command === "dusk-to-rune" ? (
-        <DuskToRune args={args} />
-      ) : command === "create" ? (
-        <Create args={args} />
-      ) : (
-        <LoginGate>
-          {command === "list" ? (
-            <List />
-          ) : command === "upload" ? (
-            <Upload flags={flags} />
-          ) : command === "update-info" ? (
-            <Update args={args} />
-          ) : command === "update-members" ? (
-            <UpdateMembers />
-          ) : command === "dashboard" || command === "dash" ? (
-            <OpenDashboard />
-          ) : null}
-        </LoginGate>
-      )}
-    </VersionCheckGate>
+    <>
+      <Text color={"green"}>
+        🚀 You can now use `npx rune@latest {command}`
+      </Text>
+      <VersionCheckGate>
+        {cli.flags.version ? (
+          <Text>{packageJson.version}</Text>
+        ) : !command || command === "help" ? (
+          <Text>{cli.help}</Text>
+        ) : command === "logout" ? (
+          <Logout />
+        ) : command === "dusk-to-rune" ? (
+          <DuskToRune args={args} />
+        ) : command === "create" ? (
+          <Create args={args} />
+        ) : (
+          <LoginGate>
+            {command === "list" ? (
+              <List />
+            ) : command === "upload" ? (
+              <Upload flags={flags} />
+            ) : command === "update-info" ? (
+              <Update args={args} />
+            ) : command === "update-members" ? (
+              <UpdateMembers />
+            ) : command === "dashboard" || command === "dash" ? (
+              <OpenDashboard />
+            ) : null}
+          </LoginGate>
+        )}
+      </VersionCheckGate>
+    </>
   )
 }
