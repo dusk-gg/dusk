@@ -28,7 +28,7 @@ You will earn money based on:
 
 The specific amount of money earned for each of these metrics depends on the player regions (more info below). With payouts based on these three metrics, the creator fund supports great games that players love coming back to and want to share with their friends!
 
-Check out [Rune.showShareImage(image)](../api-reference.md#runeshowshareimage) to make your game more shareable.
+We help you make games that are more easily sharable with built-in game links and sharing functionality like [Rune.showShareImage()](../api-reference.md#runeshowshareimage).
 
 ## Player Regions
 
