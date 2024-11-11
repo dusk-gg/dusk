@@ -17,7 +17,7 @@ export const validationOptions = {
   sdkVersionRegex: /(?:rune|rune-games|dusk-games)-sdk@(\d+(\.\d+(\.\d+)?)?)/,
   minSdkVersion: "4.8.1",
   maxFiles: 1000,
-  maxSizeMb: 10,
+  maxSizeMb: 25,
 }
 
 const eslint = new ESLint({
