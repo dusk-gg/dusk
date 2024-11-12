@@ -7,12 +7,12 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "upload": "npm run build && npx rune-games-cli@latest upload",
+    "upload": "npm run build && npx rune@latest upload",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "rune-sdk": "^4.25.1",
+    "rune-sdk": "^4.25.2",
     "phaser": "3.80.1",
     "propel-js": "1.0.21"
   },

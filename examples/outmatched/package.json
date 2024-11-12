@@ -13,7 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "rune-sdk": "^4.25.1"
+    "rune-sdk": "^4.25.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.7.0",

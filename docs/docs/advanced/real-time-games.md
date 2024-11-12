@@ -4,7 +4,7 @@ sidebar_position: 61
 
 # Real-Time Games
 
-Rune synchronizes clocks across clients + server to easily add time-based game logic. You can get the synchronized time using `Rune.gameTime()` and make fast-paced games with an `update()` loop running many times pr. second.
+Rune synchronizes clocks across clients + server to easily add time-based game logic. You can get the synchronized time using `Rune.gameTime()` or `Rune.worldTime()` and make fast-paced games with an `update()` loop running many times pr. second.
 
 ## Game Time {#game-time}
 
@@ -49,8 +49,69 @@ Rune.initLogic({
     },
   },
 })
-
 ```
+
+## World Time {#world-time}
+
+Rune exposes `Rune.worldTime()` to track time passed outside your game, which returns a timestamp in milliseconds since January 1, 1970. Using this value allows building e.g. daily challenges and time-based events. `Rune.worldTime()` has 1 second precision.
+
+Here's how to use `Rune.worldTime()` to determine if the game is played during the winter holidays:
+
+```javascript
+// logic.js
+
+Rune.initLogic({
+    setup: () => {
+        return {
+          holidaysEvent:
+            Rune.worldTime() > new Date(2024, 12, 20).getTime() &&
+            Rune.worldTime() < new Date(2025, 1, 7).getTime(),
+        }
+    },
+})
+```
+
+And here's how you can use `Rune.worldTime()` to track the time since the player last played the game:
+
+  ```javascript
+// logic.js
+
+function initPersistPlayer(
+    game,
+    playerId
+) {
+    if (Object.keys(game.persisted[playerId]).length === 0) {
+      game.persisted[playerId] = {
+        gameLastPlayedAt: Rune.worldTime(),
+      }
+    }
+}
+
+Rune.initLogic({
+    persistPlayerData: true,
+    setup: (allPlayerIds, {game}) => {
+      
+      allPlayerIds.forEach((playerId) => {
+          initPersistPlayer(game, playerId)
+        
+          const msSinceLastGame = Rune.worldTime() - game.persisted[playerId].gameLastPlayedAt
+          const timeInMinutesSinceLastGame = Math.floor(msSinceLastGame / 1000 / 60)
+          // Do something with timeInMinutesSinceLastGame (daily rewards, restore energy)
+      })
+      
+      return {...}
+    }, 
+    // Update gameLastPlayedAt for all players every second
+    update: ({ game }) => {
+      allPlayerIds.forEach((playerId) => {
+        game.persisted[playerId].gameLastPlayedAt = Rune.worldTime()
+      })
+    },
+})
+```
+
+For more examples of how to use `Rune.worldTime()`, check out our [time tech demo](https://github.com/rune/rune/tree/staging/tech-demos/world-time).
+
 
 ## Update Function {#update-function}
 

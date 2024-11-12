@@ -5,7 +5,7 @@
   "workspaces": [
     "packages/eslint-plugin-rune",
     "packages/vite-plugin-rune",
-    "packages/rune-games-cli",
+    "packages/rune",
     "packages/interpolators"
   ],
   "scripts": {
@@ -20,7 +20,7 @@
     "@eslint/compat": "^1.1.1",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.7.0",
-    "rune-games-cli": "7.8.16",
+    "rune": "7.9.2",
     "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-rune": "2.1.0",

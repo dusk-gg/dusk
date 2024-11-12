@@ -43,10 +43,10 @@ export default [
       "**/node_modules/",
       "**/generated/",
       "**/public/logic.js", //These are generated files
-      "packages/rune-games-cli/__temp/",
-      "packages/rune-games-cli/src/lib/jscodeshift/**/__testfixtures__",
+      "packages/rune/__temp/",
+      "packages/rune/src/lib/jscodeshift/**/__testfixtures__",
       "packages/vite-plugin-rune/test/fixtures/",
-      "packages/rune-games-cli/cjs/",
+      "packages/rune/cjs/",
       "**/.docusaurus",
       "docs/static/_examples",
       "docs/static/_tech-demos",
@@ -117,7 +117,7 @@ export default [
   },
 
   {
-    files: ["packages/rune-games-cli/**"],
+    files: ["packages/rune/**"],
     plugins: {
       n: nodePlugin,
 

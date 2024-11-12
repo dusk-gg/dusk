@@ -8,12 +8,12 @@ Amazing that you're considering adapting your game for multiplayer on Rune! 🥳
 
 We recommend you follow **approach 1** below, which will take care of any boilerplate and provide a nice development experience with Rune-specific ESLint & Vite plugins. You can quickly get a minimal multiplayer version of your game working, then add more game logic step-by-step. Alternatively, you can add the SDK manually.
 
-### Approach 1: Rune Template
+### Approach 1: Rune Template (recommended)
 
 Create a new Rune game project by running:
 
 ```sh
-npx rune-games-cli@latest create
+npx rune@latest create
 ```
 
 You now have a simple example game with game logic and client rendering files. You can then copy your game logic and rendering code into the `logic.ts` and `client.ts` files respectively. Take a look at [Quick Start](../quick-start.md) for an introduction to these files or [Syncing Game State](./syncing-game-state.md) for a more in-depth explanation.

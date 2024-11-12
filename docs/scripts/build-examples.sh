@@ -91,3 +91,11 @@ yarn build
 cp -r dist/. ../../docs/static/_tech-demos/threejs
 perl -pe 's/multiplayer\.js/multiplayer-dev\.js/' dist/index.html > ../../docs/static/_tech-demos/threejs/index.html
 cd ..
+
+# World time
+cd world-time
+yarn
+yarn build
+cp -r dist/. ../../docs/static/_tech-demos/world-time
+perl -pe 's/multiplayer\.js/multiplayer-dev\.js/' dist/index.html > ../../docs/static/_tech-demos/world-time/index.html
+cd ..
