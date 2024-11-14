@@ -6,7 +6,7 @@ sidebar_position: 0
 
 Build a multiplayer game for the [Rune platform](https://www.rune.ai) and its millions of players. Rune handles netcode, servers, voice chat, matchmaking, spectating, and much more.
 
-To get started, you only need to run one command:
+Get started by running:
 
 ```sh
 npx rune-games-cli@latest create
