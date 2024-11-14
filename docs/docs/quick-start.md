@@ -6,7 +6,7 @@ sidebar_position: 0
 
 Build a multiplayer game for the [Rune platform](https://www.rune.ai) and its millions of players. Rune handles netcode, servers, voice chat, matchmaking, spectating, and much more.
 
-To get started, you only need to run one command:
+Get started by running:
 
 ```sh
 npx rune@latest create
@@ -92,8 +92,7 @@ You can find additional information about [rendering here](how-it-works/syncing-
 You can also make much fancier games than Tic Tac Toe. Rune supports games with real-time multiplayer, complex physics, beautiful graphics and much more!
 
 Here are some good places to start:
-
-- If you want some inspiration for your next game, we really recommend [checking out the example games](/docs/examples/games)!
-- Building games is more fun when you're part of a community, join the [Rune Discord server](https://discord.gg/rune-devs).
-- If your game is ready to be published to the big Rune community, check out [how to publish your game](publishing/publishing-your-game.md).
-- Want to better understand how Rune works underneath? See our explanation of [game state syncing](how-it-works/syncing-game-state.md).
+- Get some inspiration by looking at the [example games](/docs/examples/games)
+- Game dev is more fun as part of a community, join the [Rune Discord server](https://discord.gg/rune-devs)
+- Learn how Rune works underneath by diving into [game state syncing](how-it-works/syncing-game-state.md)
+- See the Creator Fund details and how to [make money with Rune](publishing/making-money.md)
