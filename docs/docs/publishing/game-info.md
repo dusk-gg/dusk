@@ -12,7 +12,7 @@ Keep your game title and description short and fun.
 
 Game descriptions are auto-translated into main languages. If translation is not accurate, then please DM us on [Discord](https://discord.gg/rune-devs) and we will manually override it.
 
-## Game Preview Image
+## Game Preview Image {#game-preview-image}
 
 Having game preview image help players get a feel for what the game will look like before they play it. Here's the design guidelines:
 
