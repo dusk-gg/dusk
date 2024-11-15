@@ -34,7 +34,7 @@ Most players prefer visual explanations over reading. It's ideal if your game ca
 
 There's many non-English players on Rune so you increase your game's chances of success if you internationalize it by translating all text. The biggest non-English audiences on Rune speak Spanish, Russian and Portuguese so translate your game into those languages.
 
-Description of your game is already [auto-translated](../publishing/game-info#game-title-and-description).
+The description of your game is already [auto-translated](../publishing/game-info#game-title-and-description).
 
 ### Use Rune Avatars {#avatars}
 
