@@ -10,7 +10,7 @@ All games on Rune have game title, description and preview image.
 
 Keep your game title and description short and fun.
 
-Game descriptions are auto-translated into main languages. If translation is not accurate, then please DM us on [Discord](https://discord.gg/rune-devs) and we will manually override it.
+Game descriptions are auto-translated into the most widely used languages on Rune. If translation is not accurate, then please DM us on [Discord](https://discord.gg/rune-devs) and we will manually override it.
 
 ## Game Preview Image {#game-preview-image}
 
