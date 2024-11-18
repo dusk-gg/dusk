@@ -89,6 +89,13 @@ The `actions` option is an object with actions functions exposed to the UI integ
 
 By default a game will end if a player leaves (see [Joining and Leaving](advanced/joining-leaving.md#minimum-and-maximum-players)), but by defining the `playerJoined`/`playerLeft` events you can [Support Players Joining Midgame](advanced/joining-leaving.md#supporting-players-joining-midgame).
 
+#### `ai: { promptResponse: ({requestId: string, response: string }) => void }` _optional_ {#ai--promptresponse}
+:::info
+This is a preview API that is available for developers to test only.
+:::
+
+When a AI prompt has been processed this callback will be called with the response as explained in [AI](advanced/ai).
+
 #### `update({game: object,  allPlayerIds: string[]}) => void` _optional_ {#updategame-object--allplayerids-string--void}
 
 Function that is executed every second. See [Using Time in your Game](advanced/real-time-games.md#update-function).
@@ -118,7 +125,7 @@ Default `true`. Setting `reactive` to false will improve game logic performance,
 Whenever a player tries to do an action that is not allowed, the action handler should reject it by calling `throw Rune.invalidAction()` which will cancel the action and roll back any local optimistic updates.
 
 This is completely safe to do and can be used throughout your game. For instance, it is used in the [Tic Tac Toe example](https://github.com/rune/rune/blob/staging/examples/tic-tac-toe/logic.js) to ensure that players only can make a move when it is their turn.
-
+### 
 ```js
 // logic.js
 Rune.initLogic({
@@ -188,6 +195,17 @@ Returns the amount of milliseconds that have passed since the start of the game.
 
 Returns the amount of milliseconds since the start of epoch with a precision of 1 second. See [Using Time in your Game](advanced/real-time-games.md#world-time).
 
+### `Rune.ai.promptRequest({ messages: [{ role: string, content: string | { type: "image_data" | "text", image_url?: string, text?: string }}] })` {#runepromptrequest}
+:::info
+This is a preview API that is available for developers to test only.
+:::
+
+Calls the Rune's AI to process a generative AI request. See [AI](advanced/ai). 
+
+```js
+Rune.ai.promptRequest({ messages: [{ role: "user", content: "Who are you" }] })
+```
+
 ## Client {#client}
 
 ### `Rune.initClient(options)` {#runeinitclientoptions}
@@ -248,6 +266,14 @@ If the update was triggered from a `Rune.actions.*` call, this argument will con
 ##### `event?: { name: string, params: any }` {#event--name-string-params-any-}
 
 Possible events: `playerJoined`, `playerLeft`, `stateSync`, `update`, `timeSync`.
+
+##### `ai?: { name: string, params: any }` {#ai--name-string-params-any-}
+
+:::info
+This is a preview API that is available for developers to test only.
+:::
+
+Possible callbacks: `promptResponse`.
 
 ### `Rune.actions.*(payload)` {#runeactionspayload}
 
