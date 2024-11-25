@@ -34,6 +34,9 @@ const config = {
     locales: ["en"],
   },
 
+  // Do not use trailing slash because it breaks link references
+  trailingSlash: false,
+
   presets: [
     [
       "classic",
