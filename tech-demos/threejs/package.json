@@ -13,7 +13,7 @@
   "dependencies": {
     "@types/three": "^0.169.0",
     "nipplejs": "^0.10.2",
-    "rune-sdk": "^4.25.3",
+    "rune-sdk": "^4.25.4",
     "three": "^0.170.0"
   },
   "devDependencies": {
