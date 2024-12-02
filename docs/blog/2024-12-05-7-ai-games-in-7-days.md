@@ -40,7 +40,7 @@ If you're going to have a challenge you might as well set out the rules at the s
 
 Let's take a quick look at how the Rune SDK exposes AI to developers. It's really incredibly simple to work with and that's what made it possible to churn out these games. You can check out the [full documentation](https://developers.rune.ai/docs/advanced/ai) for more details.
 
-### Prompting the AI
+## Prompting the AI
 
 To send a prompt to the AI we simply invoke `Rune.ai.promptRequest()` from anywhere in our logic code, passing a collection of messages for the AI to interpret. Since the AI API is stateless if we want it to understand a full conversation we need to pass it the past messages and the new ones in the request.
 
@@ -57,7 +57,7 @@ Rune.ai.promptRequest({
 })
 ```
 
-### Getting AI responses
+## Getting AI responses
 
 The response to the prompt is received through a callback in the game logic as shown below. As you can see the `response` text is provided back to the logic which can then update game state. 
 
@@ -74,11 +74,7 @@ Rune.initLogic({
 
 And that's it! It's really a very simple API to use with the Rune platform managing the requests/responses and retrying the AI in the case of failures and timeouts.
 
-## Games
-
-Each day/game is described below including notes on the interesting parts of the AI interactions.
-
-### Day 1 - Storyteller AI
+## Day 1 - Storyteller AI
 <img align="right" width="150" src="/img/blog/callouts/storyteller-ai.png"></img>
 
 [Play!](https://join.rune.ai/game/Gy09RBNl-gwE) | [Kick Off](https://www.youtube.com/watch?v=8lKNgpjHBKU) | [Time Lapse](https://www.youtube.com/watch?v=0_4ULXo4dsU) | [Post-Mortem](https://www.youtube.com/watch?v=Gn8graz6wV4)
@@ -92,7 +88,7 @@ Our first game, Storyteller AI, has the players collaboratively write an epic st
 * Players struggle to think of suitable terms, having the AI suggest some seems like an AI talking to an AI, but playtesters appreciated having the suggestions.
 * The Open AI API can take 10+ seconds to respond now and again, you have to account for that possibility in design.
 
-### Day 2 - Dating AI Game
+## Day 2 - Dating AI Game
 <img align="right" width="150" src="/img/blog/callouts/dating-ai-game.png"></img>
 
 [Play!](https://join.rune.ai/game/gCPAZuWc-hgE) | [Kick Off](https://www.youtube.com/watch?v=KFYHmLUhbr0) | [Time Lapse](https://www.youtube.com/watch?v=BqEhuZTlkyU) | [Post-Mortem](https://www.youtube.com/watch?v=2fhItmAAik0)
@@ -105,7 +101,7 @@ Definitely my favorite idea from the original list, the *Dating AI Game* is base
 * Asking the AI to execute 'three rounds of questions and then a conclusion' doesn't always result in 3 rounds - sometimes 2, sometimes 8. You need to be very strict and clear when the game should finish. Even if all your examples are 3 rounds the AI may not pick up on this.
 * Coming up with varied questions is difficult for the AI, especially in a constrained contextual scenario like a old school dating show when driven by examples. It often repeats the same questions in different sessions. You can get better results by explaining the reason for the example, e.g. `The example below is for structure not for content. Please come up with as varied questions and responses as possible.`
 
-### Day 3 - Find the AI
+## Day 3 - Find the AI
 <img align="right" width="150" src="/img/blog/callouts/find-the-ai.png"></img>
 
 [Play!](https://join.rune.ai/game/ujHChE5Q-iAE) | [Kick Off](https://www.youtube.com/watch?v=FFajH5qzOFY) | [Time Lapse](https://www.youtube.com/watch?v=jODPLOrx1Ig) | [Post-Mortem](https://www.youtube.com/watch?v=-LbzUwZXS7U)
@@ -119,7 +115,7 @@ With Find the AI we're adapting the good old Werewolf game into a simple Rune ga
 * Asking the AI to sound more human with `Use slang or abbreviations to sound more human` results in an obvious AI that is intentionally making a mistake every time and throwing in slang for no reason. 
 * Giving the AI a "dial" gives the best results, `use slang 50% of the time`, `make an auto-correct mistake 10% of the time` seemed to give better more human responses but didn't make it into the final game.
 
-### Day 4 - The AI Times
+## Day 4 - The AI Times
 <img align="right" width="150" src="/img/blog/callouts/the-ai-times.png"></img>
 
 [Play!](https://join.rune.ai/game/K6CmPyI5-igE) | [Kick Off](https://www.youtube.com/watch?v=txwfVyAgvuo) | [Time Lapse](https://www.youtube.com/watch?v=9e-1mgHVeqg) | [Post-Mortem](https://www.youtube.com/watch?v=SP97rXevq6Q)
@@ -131,7 +127,7 @@ A novel idea that was conceptualized by the team, in the AI Times players are pr
 * Telling the AI what to value as input is really important. In this case we are feeding the AI with the player's caption and a description of the image that was provided to the player (generated offline). Initially the AI was producing essentially the same story for all players because they all had the same image.
 * Being explicit about the weight to apply to the inputs helped a lot, e.g. `The player's input should be considered 10x more important than the content of the image when writing the articles`
 
-### Day 5 - GIF vs AI
+## Day 5 - GIF vs AI
 <img align="right" width="150" src="/img/blog/callouts/gif-vs-ai.png"></img>
 
 [Play!](https://join.rune.ai/game/HfUtYbv3-hwE) | [Kick Off](https://www.youtube.com/watch?v=GGIl9zjuZ-w) | [Time Lapse](https://www.youtube.com/watch?v=eZtJVbPrGr4) | [Post-Mortem](https://www.youtube.com/watch?v=H9ourtJtU4UQ)
@@ -143,7 +139,7 @@ Probably the player favorite so far is GIF vs AI - a twist on the popular Death 
 * The Tenor generated GIF descriptions that are provided as meta-data are often of just the first frame and don't include details of what happens in the animation. Though not accurate, in our case this leads to fun mistakes!
 * The AI appears capable of generating "good" search terms based on longer textual descriptions. While AI summarization is expected to be good I hadn't expected it to be able to extract the relevant terms from the text to get a reasonably accurate GIF result from a search. 
 
-### Day 6 - AI Art Judge
+## Day 6 - AI Art Judge
 <img align="right" width="150" src="/img/blog/callouts/ai-art-judge.png"></img>
 
 [Play!](https://join.rune.ai/game/ndNWZDVQ-iQE) | [Kick Off](https://www.youtube.com/watch?v=8CA15ifaukw) | [Time Lapse](https://www.youtube.com/watch?v=-bo8DCdm0QA) | [Post-Mortem](https://www.youtube.com/watch?v=7u4s8Ud87eQ)
@@ -156,7 +152,7 @@ One of the great things about the AI in the Rune SDK is that it exposes image an
 * Ran out of time, but it may have been better to ask `what is in this image` and then get a match weight comparing that output with the original item description.
 * Image analysis isn't expensive as long as your images are smaller than 512x512 (generally plenty for this sort of game). Any bigger and costs go up quickly.
 
-### Day 7 - AI Emoji Interview
+## Day 7 - AI Emoji Interview
 <img align="right" width="150" src="/img/blog/callouts/ai-emoji-interview.png"></img>
 
 [Play!](https://join.rune.ai/game/o591Hl2V-iwE) | [Kick Off](https://www.youtube.com/watch?v=cxq3vC-hGso) | [Time Lapse](https://www.youtube.com/watch?v=K2XMQ_vbLa0) | [Post-Mortem](https://www.youtube.com/watch?v=z7ogah2k4y0)
