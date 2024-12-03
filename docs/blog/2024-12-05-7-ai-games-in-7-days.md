@@ -17,7 +17,7 @@ authors:
   <meta property="og:title" content="7 AI games in 7 Days"/>
 </head>
 
-We've just added AI to the Rune SDK so that your games can now make use of generative AI responses. To really dog-food this release of the SDK I decided to build out some AI games to explore what novel and fun ideas could be created on this new feature. This being Rune, of course, it had to made a challenge. Can I build 7 unique AI based games in 7 days? Here's what happened and what I learnt during the process. 
+We've just added AI to the Rune SDK so that your games can now make use of generative AI responses. To really dog-food this release of the SDK I decided to build out some AI games to explore what novel and fun ideas could be created on this new feature. This being Rune, of course, it had to made a challenge. Can I build 7 unique multiplayer AI based games in 7 days? Here's what happened, the MIT licensed source and what I learnt during the process. 
 
 ## Day 1 - Storyteller AI
 <img align="right" width="150" src="/img/blog/callouts/storyteller-ai.png"></img>
