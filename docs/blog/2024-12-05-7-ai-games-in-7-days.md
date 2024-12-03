@@ -17,9 +17,9 @@ authors:
   <meta property="og:title" content="7 AI games in 7 Days"/>
 </head>
 
-We've just added AI to the Rune SDK so that games can now use generative AI in the game play. To really dog-food this, I decided to build out some AI games to explore what novel game play could be achieved using LLMs. So I set myself a challenge. Can I build 7 unique multiplayer AI games in 7 days?
+We've just added AI to the Rune SDK so that your games can now make use of generative AI responses. To really dog-food this, I decided to build out some AI games to explore what novel fun gameplay could be achieved using LLMs. So I set myself a challenge. Can I build 7 unique multiplayer AI games in 7 days?
 
-Here's what happened, the MIT licensed source code and what I learnt during the process. I've recorded a little video playing all the games so you can get a quick feel for what they're like.
+Here's what happened, the MIT-licensed source code and what I learnt during the process. I've recorded a little video playing all the games so you can get a quick feel for what they're like.
 
 ## Day 1 - Storyteller AI
 <a href="/img/blog/callouts/storyteller-ai.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }} src="/img/blog/callouts/storyteller-ai.png"></img></a>
@@ -32,8 +32,8 @@ The first game, *Storyteller AI*, has the players collaboratively write an epic 
 
 * The first game was always going to find the edges of the implementation and naturally the development ran into a few bugs which were fixed along with writing the game on the first day. 
 * Prompting an AI to write a story needs guidelines otherwise it just goes no where. It's important to set out clearly that there will need to be a conclusion in a fixed number of iterations.
-* Players struggle to think of suitable terms, having the AI suggest some seems like an AI talking to an AI, but play testers appreciated having the suggestions.
-* The Open AI API can take 10+ seconds to respond now and again, you have to account for that possibility in design.
+* Players struggle to think of suitable terms, having the AI suggest some seems like an AI talking to an AI, but playtesters appreciated having the suggestions.
+* The OpenAI API can take 10+ seconds to respond now and again, you have to account for that possibility in design.
 
 ## Day 2 - Dating AI Game
 <a href="/img/blog/callouts/dating-ai-game.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }}  src="/img/blog/callouts/dating-ai-game.png"></img></a>
@@ -44,8 +44,8 @@ Definitely my favorite idea from the original list, the *Dating AI Game* is base
 
 #### What did I learn?
 
-* Players will always try to be rude / outlandish - make the choice how you want the AI to respond don't leave it to chance!
-* Asking the AI to execute 'three rounds of questions and then a conclusion' doesn't always result in 3 rounds - sometimes 2, sometimes 8. You need to be very strict and clear when the game should finish. Even if all your examples are 3 rounds the AI may not pick up on this.
+* Players will always try to be rude / outlandish - make the choice how you want the AI to respond, don't leave it to chance!
+* Asking the AI to execute 'three rounds of questions and then a conclusion' doesn't always result in 3 rounds - sometimes 2, sometimes 8. You need to be very strict and clear when the game should finish. Even if all your examples are 3 rounds, the AI may not pick up on this.
 * Coming up with varied questions is difficult for the AI, especially in a constrained contextual scenario like a old school dating show when driven by examples. It often repeats the same questions in different sessions. You can get better results by explaining the reason for the example, e.g. `The example below is for structure not for content. Please come up with as varied questions and responses as possible.`
 
 ## Day 3 - Find the AI
@@ -67,7 +67,7 @@ With *Find the AI*, I'm adapting the good old Werewolf into a simple Rune game. 
 
 [Play!](https://join.rune.ai/game/K6CmPyI5-igE) | [Kick Off](https://www.youtube.com/watch?v=txwfVyAgvuo) | [Time Lapse](https://www.youtube.com/watch?v=9e-1mgHVeqg) | [Post-Mortem](https://www.youtube.com/watch?v=SP97rXevq6Q) | [Code](https://github.com/rune/the-ai-times)
 
-A novel idea that was conceptualized by the team, in the AI Times players are presented with a random image and asked to provide a short caption. The generative AI is then prompted to create a tabloid style front page including headline and tag line. The players then vote on their favorite story to choose a winner. The combination of abstract, quirky images and the imagination of the players results in some really wonderfully silly front pages. 
+A novel idea that was conceptualized by the team. Players are presented with a random image and asked to provide a short caption. The generative AI is then prompted to create a tabloid style front page including headline and tag line. The players then vote on their favorite story to choose a winner. The combination of abstract, quirky images and the imagination of the players results in some really wonderfully silly front pages. 
 
 #### What did I learn?
 
@@ -79,7 +79,7 @@ A novel idea that was conceptualized by the team, in the AI Times players are pr
 
 [Play!](https://join.rune.ai/game/HfUtYbv3-hwE) | [Kick Off](https://www.youtube.com/watch?v=GGIl9zjuZ-w) | [Time Lapse](https://www.youtube.com/watch?v=eZtJVbPrGr4) | [Post-Mortem](https://www.youtube.com/watch?v=H9ourtJtU4UQ) | [Code](https://github.com/rune/gif-vs-ai)
 
-Probably the player favorite so far is GIF vs AI - a twist on the popular Death by AI game. The AI generates a life threatening scenario and a GIF is chosen to represent it. Players then have to respond with how they'll attempt to survive by selecting a GIF. Finally the AI evaluates the scenario and the provided survival GIF to determine if the player survives and selects a GIF to represent the outcome. Adding in the GIFs makes the game faster to play and the AI interpretation of the GIF can lead to un-intended and funny outcomes. 
+Probably the player favorite so far is GIF vs AI, a twist on the popular Death by AI game. The AI generates a life-threatening scenario and a GIF is chosen to represent it. Players then have to respond with how they'll attempt to survive by selecting a GIF. Finally, the AI evaluates the scenario and the provided survival GIF to determine if the player survives and selects a GIF to represent the outcome. Adding in the GIFs makes the game faster to play and the AI interpretation of the GIF can lead to unintended and funny outcomes. 
 
 #### What did I learn?
 
@@ -91,7 +91,7 @@ Probably the player favorite so far is GIF vs AI - a twist on the popular Death 
 
 [Play!](https://join.rune.ai/game/ndNWZDVQ-iQE) | [Kick Off](https://www.youtube.com/watch?v=8CA15ifaukw) | [Time Lapse](https://www.youtube.com/watch?v=-bo8DCdm0QA) | [Post-Mortem](https://www.youtube.com/watch?v=7u4s8Ud87eQ) | [Code](https://github.com/rune/ai-art-judge)
 
-One of the great things about the AI in the Rune SDK is that it exposes image analysis as part of the same single API. AI Art Judge uses this to become an art critic. Players suggest a 'thing' to be drawn. They're then given a fixed time to draw a picture of the randomly picked item. Once everyone is done, the AI evaluates the drawings based on the original input and provides an overly artsy and funny critique. It turns out AI is an expert in being pompous. 
+When adding AI capabilities to the SDK, I was quite happy that we added image analysis in as part of the same single API. The AI Art Judge game uses this to become an art critic. Players suggest a 'thing' to be drawn. They're then given a fixed time to draw a picture of the randomly-picked item. Once everyone is done, the AI evaluates the drawings based on the original input and provides an overly artsy and funny critique. It turns out AI is an expert in being pompous. 
 
 #### What did I learn?
 
@@ -104,12 +104,12 @@ One of the great things about the AI in the Rune SDK is that it exposes image an
 
 [Play!](https://join.rune.ai/game/o591Hl2V-iwE) | [Kick Off](https://www.youtube.com/watch?v=cxq3vC-hGso) | [Time Lapse](https://www.youtube.com/watch?v=K2XMQ_vbLa0) | [Post-Mortem](https://www.youtube.com/watch?v=YzViVAQS5Tk) | [Code](https://github.com/rune/ai-emoji-interview)
 
-In the final game of the 7 days I wanted to try out how AI interprets emojis. The AI Emoji Interview game has the AI acting an interviewer for a made up and crazy job opportunity. Players must take part in the interview but can only provide emojis as answers. The AI interprets the emojis as answers and eventually selects a player to get the job. Switching from text to emoji speeds the game up and players can still to get their point across easily. 
+In the final game of the 7 days, I wanted to try out how AI interprets emojis. The AI Emoji Interview game has the AI acting an interviewer for a made up and crazy job opportunity. Players must take part in the interview but can only provide emojis as answers. The AI interprets the emojis as answers and eventually selects a player to get the job. Switching from text to emoji speeds the game up and players can still to get their point across easily. 
 
 #### What did I learn?
 
 * AI can understand emoji as easily as normal text. It can even interpret the meaning of combined emoji's in most common cases.
-* Similar to generating questions above, generating "crazy" jobs is difficult for AI. It tends to generate similar jobs even when asked to explore a broad search space. In hind sight it may have been better to generate 100 crazy jobs offline and used these as input rather than relying on a dynamically generated job title.
+* Similar to generating questions above, generating "crazy" jobs is difficult for AI. It tends to generate similar jobs even when asked to explore a broad search space. In hindsight it may have been better to generate 100 crazy jobs offline and used these as input rather than relying on a dynamically-generated job title.
 
 ## General Observations
 
@@ -123,30 +123,30 @@ It's been an interest week of making games with lots of experimentation using AI
 
 ## Preparation 
 
-Trying to create a game per day a game means getting everything in place before hand. As I was always told, Prior Preparation Prevents Pretty Poor Performance. In this case I started without 25 ideas for AI games, whittled that down to 7 good ones and built wire frames to explore the design. Then our designer, the formidable Shane, took them and produced beautiful graphics in the associated themes. 
+Trying to create a game per day a game means getting everything in place beforehand. As I was always told, Prior Preparation Prevents Pretty Poor Performance. In this case I started with 25 ideas for AI games, whittled that down to 7 good ones and built wireframes to explore the design. Then our designer, the formidable Shane, took them and produced beautiful graphics in the associated themes. 
 
 With the designs in hand I was ready for building 7 AI games in 7 Days.
 
 ## Rules
 
-If you're going to have a challenge you might as well set out the rules at the start so here goes:
+If you're going to have a challenge, you might as well set out the rules at the start so here goes:
 
 1. 7 Days is consecutive working days - weekends off!
-2. A day is a normal 8 hour working stint. No pulling an all nighter and claiming the game was built in a day.
+2. A day is a normal 8-hour working stint. No pulling an all-nighter and claiming the game was built in a day.
 3. Games start from the Rune standard TypeScript template. 
-4. Code reuse between games via cut and paste of common code. No building a library and then building 7 games on it.
-5. All games should run in the Dev UI and on the production app.
-6. Of course all the games will be built on Rune!
+4. Code reuse between games is done via copy-paste of common code. No building a library and then building 7 games on it.
+5. All games should run in the Dev UI and on the production Rune app.
+6. Of course, all the games should be built using Rune!
 
 ## How does it work?
 
-Let's take a quick look at how the Rune SDK exposes AI to developers. It's really incredibly simple to work with and that's what made it possible to churn out these games. You can check out the [full documentation](https://developers.rune.ai/docs/advanced/ai) for more details.
+Let's take a quick look at how the Rune SDK exposes AI to developers. It's quite simple to work with and that's what made it possible to churn out these games. You can check out the [full documentation](https://developers.rune.ai/docs/advanced/ai) for more details.
 
 ## Prompting the AI
 
-To send a prompt to the AI we simply invoke `Rune.ai.promptRequest()` from anywhere in our logic code, passing a collection of messages for the AI to interpret. Since the AI API is stateless if we want it to understand a full conversation we need to pass it the past messages and the new ones in the request.
+To send a prompt to the AI, we invoke `Rune.ai.promptRequest()` from anywhere in our logic code, passing a collection of messages for the AI to interpret. Since the AI API is stateless, we need to pass it the past messages and the new ones in the request if we want it to understand a full conversation.
 
-As you can see below, the prompt request can take both text and image prompts. In the Rune SDK we only support passing in `data://` URI's for images because we'd want to ensure the games are always available to the players, hence not allowing dependencies on external resources.
+As you can see below, the prompt request can take both text and image prompts. In the Rune SDK, we only support passing in `data://` URI's for images because we'd want to ensure the games are always available to the players, hence not allowing dependencies on external images.
 
 ```javascript
 Rune.ai.promptRequest({
@@ -161,7 +161,7 @@ Rune.ai.promptRequest({
 
 ## Getting AI responses
 
-The response to the prompt is received through a callback in the game logic as shown below. As you can see the `response` text is provided back to the logic which can then update game state. 
+The response to the prompt is received through a callback in the game logic as shown below. The `response` text is provided back to the logic, which can then update game state. 
 
 ```javascript
 Rune.initLogic({
@@ -174,12 +174,12 @@ Rune.initLogic({
 })
 ```
 
-And that's it! It's really a very simple API to use with the Rune platform managing the requests/responses and retrying the AI in the case of failures and timeouts.
+As you can tell, it's a quite minimal API. The idea was to make it as easy as possible to incorporate LLMs into the gameplay of Rune games. Behind the scenes, the SDK handles the requests/responses, exponential backoff in case of request failures, etc. It's all fairly standard stuff. The real magic is in Rune's netcode for syncing players and of course in the AI itself.
 
 ## Conclusion
 
-It's been a fun, if tiring, week writing a game a day. The games themselves have come out pretty fun and I'm looking forward to how they do when they hit the 100,000's of players available on the Rune platform. Pretty much all the guidance on writing prompts generally applied to using it for games - though it is somewhat challenging to keep the AI from expanding outside of the rules you want to enforce for the game. With the addition of this easy AI API into the SDK I can't wait to see what developers build!
+It's been a fun, if tiring, week writing a game a day. The games themselves have come out pretty fun and I'm looking forward to how they do when they hit the 100,000's of players available on the Rune platform. Pretty much all the guidance on writing prompts generally applied to using it for games - though it is somewhat challenging to keep the AI from expanding outside the rules you want to enforce for the game. I can't wait to see what kind of AI-powered games the future holds.
 
-Want to learn more? Join us on [Discord](https://discord.gg/rune-devs) for a chat!
+Any thoughts or suggestions for how we could have made the games better? Join us on the [Rune Discord](https://discord.gg/rune-devs) for a chat!
 
 

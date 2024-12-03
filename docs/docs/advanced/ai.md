@@ -5,7 +5,7 @@ sidebar_position: 30
 # AI
 
 :::info
-This is a preview API available for developers to test only.
+This is a preview API available for developers to test only. We'll enable it for production use soon.
 :::
 
 Using generative AI in your games can lead to fun and surprising outcomes. Rune provides an easy-to-use API for submitting prompts based on user actions, with responses fed back into game logic.
