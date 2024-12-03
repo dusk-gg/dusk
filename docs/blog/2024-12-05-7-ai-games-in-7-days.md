@@ -19,7 +19,7 @@ authors:
 
 We've just added AI to the Rune SDK so that your games can now make use of generative AI responses. To really dog-food this, I decided to build out some AI games to explore what novel fun gameplay could be achieved using LLMs. So I set myself a challenge. Can I build 7 unique multiplayer AI games in 7 days?
 
-Here's what happened, the MIT licensed source code and what I learnt during the process. I've recorded a little video playing all the games so you can get a quick feel for what they're like.
+Here's what happened, the MIT-licensed source code and what I learnt during the process. I've recorded a little video playing all the games so you can get a quick feel for what they're like.
 
 \<video\>
 
