@@ -21,10 +21,8 @@ We've just added AI to the Rune SDK so that your games can now make use of gener
 
 Here's what happened, the MIT-licensed source code and what I learnt during the process. I've recorded a little video playing all the games so you can get a quick feel for what they're like.
 
-\<video\>
-
 ## Day 1 - Storyteller AI
-<img align="right" width="150" src="/img/blog/callouts/storyteller-ai.png"></img>
+<a href="/img/blog/callouts/storyteller-ai.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }} src="/img/blog/callouts/storyteller-ai.png"></img></a>
 
 [Play!](https://join.rune.ai/game/Gy09RBNl-gwE) | [Kick Off](https://www.youtube.com/watch?v=8lKNgpjHBKU) | [Time Lapse](https://www.youtube.com/watch?v=0_4ULXo4dsU) | [Post-Mortem](https://www.youtube.com/watch?v=Gn8graz6wV4) | [Code](https://github.com/rune/storyteller-ai)
 
@@ -38,7 +36,7 @@ The first game, *Storyteller AI*, has the players collaboratively write an epic 
 * The OpenAI API can take 10+ seconds to respond now and again, you have to account for that possibility in design.
 
 ## Day 2 - Dating AI Game
-<img align="right" width="150" src="/img/blog/callouts/dating-ai-game.png"></img>
+<a href="/img/blog/callouts/dating-ai-game.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }}  src="/img/blog/callouts/dating-ai-game.png"></img></a>
 
 [Play!](https://join.rune.ai/game/gCPAZuWc-hgE) | [Kick Off](https://www.youtube.com/watch?v=KFYHmLUhbr0) | [Time Lapse](https://www.youtube.com/watch?v=BqEhuZTlkyU) | [Post-Mortem](https://www.youtube.com/watch?v=2fhItmAAik0) | [Code](https://github.com/rune/dating-ai-game)
 
@@ -51,7 +49,7 @@ Definitely my favorite idea from the original list, the *Dating AI Game* is base
 * Coming up with varied questions is difficult for the AI, especially in a constrained contextual scenario like a old school dating show when driven by examples. It often repeats the same questions in different sessions. You can get better results by explaining the reason for the example, e.g. `The example below is for structure not for content. Please come up with as varied questions and responses as possible.`
 
 ## Day 3 - Find the AI
-<img align="right" width="150" src="/img/blog/callouts/find-the-ai.png"></img>
+<a href="/img/blog/callouts/find-the-ai.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }}  src="/img/blog/callouts/find-the-ai.png"></img></a>
 
 [Play!](https://join.rune.ai/game/ujHChE5Q-iAE) | [Kick Off](https://www.youtube.com/watch?v=FFajH5qzOFY) | [Time Lapse](https://www.youtube.com/watch?v=jODPLOrx1Ig) | [Post-Mortem](https://www.youtube.com/watch?v=-LbzUwZXS7U) | [Code](https://github.com/rune/find-the-ai)
 
@@ -65,7 +63,7 @@ With *Find the AI*, I'm adapting the good old Werewolf into a simple Rune game. 
 * Giving the AI a "dial" gives the best results, `use slang 50% of the time`, `make an auto-correct mistake 10% of the time` seemed to give better more human responses but didn't make it into the final game.
 
 ## Day 4 - The AI Times
-<img align="right" width="150" src="/img/blog/callouts/the-ai-times.png"></img>
+<a href="/img/blog/callouts/the-ai-times.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }} src="/img/blog/callouts/the-ai-times.png"></img></a>
 
 [Play!](https://join.rune.ai/game/K6CmPyI5-igE) | [Kick Off](https://www.youtube.com/watch?v=txwfVyAgvuo) | [Time Lapse](https://www.youtube.com/watch?v=9e-1mgHVeqg) | [Post-Mortem](https://www.youtube.com/watch?v=SP97rXevq6Q) | [Code](https://github.com/rune/the-ai-times)
 
@@ -77,7 +75,7 @@ A novel idea that was conceptualized by the team. Players are presented with a r
 * Being explicit about the weight to apply to the inputs helped a lot, e.g. `The player's input should be considered 10x more important than the content of the image when writing the articles`
 
 ## Day 5 - GIF vs AI
-<img align="right" width="150" src="/img/blog/callouts/gif-vs-ai.png"></img>
+<a href="/img/blog/callouts/gif-vs-ai.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }} src="/img/blog/callouts/gif-vs-ai.png"></img></a>
 
 [Play!](https://join.rune.ai/game/HfUtYbv3-hwE) | [Kick Off](https://www.youtube.com/watch?v=GGIl9zjuZ-w) | [Time Lapse](https://www.youtube.com/watch?v=eZtJVbPrGr4) | [Post-Mortem](https://www.youtube.com/watch?v=H9ourtJtU4UQ) | [Code](https://github.com/rune/gif-vs-ai)
 
@@ -89,7 +87,7 @@ Probably the player favorite so far is GIF vs AI, a twist on the popular Death b
 * The AI appears capable of generating "good" search terms based on longer textual descriptions. While AI summarization is expected to be good I hadn't expected it to be able to extract the relevant terms from the text to get a reasonably accurate GIF result from a search. 
 
 ## Day 6 - AI Art Judge
-<img align="right" width="150" src="/img/blog/callouts/ai-art-judge.png"></img>
+<a href="/img/blog/callouts/ai-art-judge.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }} src="/img/blog/callouts/ai-art-judge.png"></img></a>
 
 [Play!](https://join.rune.ai/game/ndNWZDVQ-iQE) | [Kick Off](https://www.youtube.com/watch?v=8CA15ifaukw) | [Time Lapse](https://www.youtube.com/watch?v=-bo8DCdm0QA) | [Post-Mortem](https://www.youtube.com/watch?v=7u4s8Ud87eQ) | [Code](https://github.com/rune/ai-art-judge)
 
@@ -102,7 +100,7 @@ When adding AI capabilities to the SDK, I was quite happy that we added image an
 * Image analysis isn't expensive as long as your images are smaller than 512x512 (generally plenty for this sort of game). Any bigger and costs go up quickly.
 
 ## Day 7 - AI Emoji Interview
-<img align="right" width="150" src="/img/blog/callouts/ai-emoji-interview.png"></img>
+<a href="/img/blog/callouts/ai-emoji-interview.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }} src="/img/blog/callouts/ai-emoji-interview.png"></img></a>
 
 [Play!](https://join.rune.ai/game/o591Hl2V-iwE) | [Kick Off](https://www.youtube.com/watch?v=cxq3vC-hGso) | [Time Lapse](https://www.youtube.com/watch?v=K2XMQ_vbLa0) | [Post-Mortem](https://www.youtube.com/watch?v=YzViVAQS5Tk) | [Code](https://github.com/rune/ai-emoji-interview)
 
