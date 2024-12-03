@@ -77,7 +77,7 @@ And that's it! It's really a very simple API to use with the Rune platform manag
 ## Day 1 - Storyteller AI
 <img align="right" width="150" src="/img/blog/callouts/storyteller-ai.png"></img>
 
-[Play!](https://join.rune.ai/game/Gy09RBNl-gwE) | [Kick Off](https://www.youtube.com/watch?v=8lKNgpjHBKU) | [Time Lapse](https://www.youtube.com/watch?v=0_4ULXo4dsU) | [Post-Mortem](https://www.youtube.com/watch?v=Gn8graz6wV4)
+[Play!](https://join.rune.ai/game/Gy09RBNl-gwE) | [Kick Off](https://www.youtube.com/watch?v=8lKNgpjHBKU) | [Time Lapse](https://www.youtube.com/watch?v=0_4ULXo4dsU) | [Post-Mortem](https://www.youtube.com/watch?v=Gn8graz6wV4) | [Code](https://github.com/rune/storyteller-ai)
 
 Our first game, Storyteller AI, has the players collaboratively write an epic story together by suggesting simple terms that the AI then weaves into the story. There's no winner, or rather everyone is a winner with a brand new story. The fun comes when people start suggesting strange and wacky terms which are attributed to them in the story. 
 
@@ -91,7 +91,7 @@ Our first game, Storyteller AI, has the players collaboratively write an epic st
 ## Day 2 - Dating AI Game
 <img align="right" width="150" src="/img/blog/callouts/dating-ai-game.png"></img>
 
-[Play!](https://join.rune.ai/game/gCPAZuWc-hgE) | [Kick Off](https://www.youtube.com/watch?v=KFYHmLUhbr0) | [Time Lapse](https://www.youtube.com/watch?v=BqEhuZTlkyU) | [Post-Mortem](https://www.youtube.com/watch?v=2fhItmAAik0)
+[Play!](https://join.rune.ai/game/gCPAZuWc-hgE) | [Kick Off](https://www.youtube.com/watch?v=KFYHmLUhbr0) | [Time Lapse](https://www.youtube.com/watch?v=BqEhuZTlkyU) | [Post-Mortem](https://www.youtube.com/watch?v=2fhItmAAik0) | [Code](https://github.com/rune/dating-ai-game)
 
 Definitely my favorite idea from the original list, the *Dating AI Game* is based on those old blind dating shows from the 70s and 80s. Players take the part of contestants attempting to win a date by answering their potential date's questions in the most fun way. The AI plays the part of the question asker and the overall narrator. Players really do seem to enjoy this one, particularly entering the most rude answer they can think of.
 
@@ -104,7 +104,7 @@ Definitely my favorite idea from the original list, the *Dating AI Game* is base
 ## Day 3 - Find the AI
 <img align="right" width="150" src="/img/blog/callouts/find-the-ai.png"></img>
 
-[Play!](https://join.rune.ai/game/ujHChE5Q-iAE) | [Kick Off](https://www.youtube.com/watch?v=FFajH5qzOFY) | [Time Lapse](https://www.youtube.com/watch?v=jODPLOrx1Ig) | [Post-Mortem](https://www.youtube.com/watch?v=-LbzUwZXS7U)
+[Play!](https://join.rune.ai/game/ujHChE5Q-iAE) | [Kick Off](https://www.youtube.com/watch?v=FFajH5qzOFY) | [Time Lapse](https://www.youtube.com/watch?v=jODPLOrx1Ig) | [Post-Mortem](https://www.youtube.com/watch?v=-LbzUwZXS7U) | [Code](https://github.com/rune/find-the-ai)
 
 With Find the AI we're adapting the good old Werewolf game into a simple Rune game. The AI generates a simple question, players answer it and so does the AI. The AI has been instructed to sound as human as possible including adding typos and slang. The players are then presented all the answers and have to guess which one is the AI. Having the AI act human is fun, but watching players trying to sound like an AI is really great. 
 
@@ -118,7 +118,7 @@ With Find the AI we're adapting the good old Werewolf game into a simple Rune ga
 ## Day 4 - The AI Times
 <img align="right" width="150" src="/img/blog/callouts/the-ai-times.png"></img>
 
-[Play!](https://join.rune.ai/game/K6CmPyI5-igE) | [Kick Off](https://www.youtube.com/watch?v=txwfVyAgvuo) | [Time Lapse](https://www.youtube.com/watch?v=9e-1mgHVeqg) | [Post-Mortem](https://www.youtube.com/watch?v=SP97rXevq6Q)
+[Play!](https://join.rune.ai/game/K6CmPyI5-igE) | [Kick Off](https://www.youtube.com/watch?v=txwfVyAgvuo) | [Time Lapse](https://www.youtube.com/watch?v=9e-1mgHVeqg) | [Post-Mortem](https://www.youtube.com/watch?v=SP97rXevq6Q) | [Code](https://github.com/rune/the-ai-times)
 
 A novel idea that was conceptualized by the team, in the AI Times players are presented with a random image and asked to provide a short caption. The generative AI is then prompted to create a tabloid style front page including headline and tag line. The players then vote on their favorite story to choose a winner. The combination of abstract, quirky images and the imagination of the players results in some really wonderfully silly front pages. 
 
