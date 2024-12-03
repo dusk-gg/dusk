@@ -155,7 +155,7 @@ One of the great things about the AI in the Rune SDK is that it exposes image an
 ## Day 7 - AI Emoji Interview
 <img align="right" width="150" src="/img/blog/callouts/ai-emoji-interview.png"></img>
 
-[Play!](https://join.rune.ai/game/o591Hl2V-iwE) | [Kick Off](https://www.youtube.com/watch?v=cxq3vC-hGso) | [Time Lapse](https://www.youtube.com/watch?v=K2XMQ_vbLa0) | [Post-Mortem](https://www.youtube.com/watch?v=z7ogah2k4y0)
+[Play!](https://join.rune.ai/game/o591Hl2V-iwE) | [Kick Off](https://www.youtube.com/watch?v=cxq3vC-hGso) | [Time Lapse](https://www.youtube.com/watch?v=K2XMQ_vbLa0) | [Post-Mortem](https://www.youtube.com/watch?v=YzViVAQS5Tk)
 
 In the final game of the 7 days we wanted to try out how AI interprets emojis. The AI Emoji Interview game has the AI acting an interviewer for a made up and crazy job opportunity. Players must take part in the interview but can only provide emojis as answers. The AI interprets the emojis as answers and eventually selects a player to get the job. Switching from text to emoji speeds the game up and players can still to get their point across easily. 
 
