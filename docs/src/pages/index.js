@@ -39,7 +39,7 @@ const features = [
   },
   {
     icon: require("@site/static/img/home/features/dollar.png").default,
-    title: "We help you make money (coming soon!)",
+    title: "We help you make money",
     description: [
       "Earn money from your game without dealing with ads or purchases.",
       "Rune's creator fund pays you directly based on your game's stats.",

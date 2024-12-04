@@ -1,28 +1,8 @@
-# Getting Started with Rune
+# Rune ThreeJS Tech Demo
 
-### `npm run dev`
+Try it on the [Demo Page](https://developers.rune.ai/tech-demos/threejs/)
 
-Runs the game in Dev UI.
+Check out the [Blog](https://developers.rune.ai/blog/threejs/)
 
-The page will reload when you make changes.
+<img src="https://github.com/user-attachments/assets/22d8062d-5f2e-4bb7-b180-b7b0966fe414" width="200"/>
 
-### `npm run upload`
-
-Builds the game and starts upload process to Rune.
-
-### `npm run build`
-
-Builds the game. You can then upload it to Rune using `npx rune-games-cli@latest upload`.
-
-### `npm run lint`
-
-Runs the validation rules. You can read about them in the [docs on server-side logic](https://developers.rune.ai/docs/advanced/server-side-logic).
-
-### `npm run typecheck`
-
-Verifies that TypeScript is valid.
-
-
-## Learn More
-
-See the [Rune docs](https://developers.rune.ai/docs/quick-start) for more info. You can also ask any questions in the [Rune Discord](https://discord.gg/rune-devs), we're happy to help!

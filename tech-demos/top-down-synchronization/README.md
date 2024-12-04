@@ -13,3 +13,9 @@ https://pixelfrog-assets.itch.io/tiny-swords
 These assets are released under a Creative Commons Zero (CC0) license. You can distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes.
 
 Attribution is not required.
+
+Try it on the [Demo Page](https://developers.rune.ai/tech-demos/top-down-synchronization/)
+
+Check out the [Blog](https://developers.rune.ai/blog/top-down-synchronization/)
+
+<img src="https://github.com/user-attachments/assets/0bb2fae8-c9bc-48c1-a466-9d9a4a7d90a3" width="200"/>
