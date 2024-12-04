@@ -14,8 +14,8 @@ These assets are released under a Creative Commons Zero (CC0) license. You can d
 
 Attribution is not required.
 
-![image](https://github.com/user-attachments/assets/0bb2fae8-c9bc-48c1-a466-9d9a4a7d90a3)
-
-Try it on the [Demo Page]([https://developers.rune.ai/tech-demos/threejs/](https://developers.rune.ai/tech-demos/top-down-synchronization/))
+Try it on the [Demo Page](https://developers.rune.ai/tech-demos/top-down-synchronization/)
 
 Check out the [Blog](https://developers.rune.ai/blog/top-down-synchronization/)
+
+![image](https://github.com/user-attachments/assets/0bb2fae8-c9bc-48c1-a466-9d9a4a7d90a3)
