@@ -200,7 +200,7 @@ Returns the amount of milliseconds since the start of epoch with a precision of 
 This is a preview API that is available for developers to test only.
 :::
 
-Calls the Rune's AI to process a generative AI request. See [AI](advanced/ai). 
+Calls the Rune's AI to process a generative AI request. See [AI](advanced/ai). Returns a unique request ID which will be provided along with the response to the `Rune.ai.promptResponse` event callback.
 
 ```js
 Rune.ai.promptRequest({ messages: [{ role: "user", content: "Who are you" }] })
