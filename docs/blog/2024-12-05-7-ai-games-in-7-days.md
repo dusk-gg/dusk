@@ -21,6 +21,8 @@ We've just added AI to the Rune SDK so that your games can now make use of gener
 
 Here's what happened, the MIT-licensed source code and what I learnt during the process. I've recorded a little video playing all the games so you can get a quick feel for what they're like.
 
+<iframe width="540" height="960" src="https://www.youtube.com/embed/G8rGOjdbKeE?si=G8rGOjdbKeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Day 1 - Storyteller AI
 <a href="/img/blog/callouts/storyteller-ai.png" target="_blank"><img align="right" width="150" style={{ marginLeft: '20px' }} src="/img/blog/callouts/storyteller-ai.png"></img></a>
 
