@@ -17,7 +17,7 @@ authors:
   <meta property="og:title" content="7 AI games in 7 Days"/>
 </head>
 
-At Rune, we're helping devs make multiplayer games using JS that are played by our community on our iOS + Android app. There's been a lot of excitement among devs about using AI to power wacky gameplay so we added AI to the Rune SDK. To dogfood this, I decided to build out some AI games to explore what interesting gameplay could be achieved using LLMs. So I set myself a challenge. Can I build 7 multiplayer AI games in 7 days?
+At Rune, we're helping devs make casual multiplayer games using JS that are played by groups of friends on our iOS + Android app. There's been a lot of excitement among devs about using AI to power wacky gameplay so we added AI to the Rune SDK. To dogfood this, I decided to build out some AI games to explore what interesting gameplay could be achieved using LLMs. So I set myself a challenge. Can I build 7 multiplayer AI games in 7 days?
 
 Here's what happened, the MIT-licensed source code and what I learnt during the process. I've recorded a little video playing all the games to give a quick feel for what they're like.
 
