@@ -18,6 +18,6 @@ You can also dive into specific errors and see the stack trace + device info, wh
 
 ## OP Level
 
-On the dashboard, you can also see the OP level (short for "overpowered") of your games. The OP level shows how many of the [best practices](/docs/best-practices-gameplay) your game achieves. The idea being that a game that has implemented many of the best practices is more likely to do well on Rune.
+On the dashboard, you can also see the OP level (short for "overpowered") of your games. The OP level shows how many of the [best practices](/docs/playtesting/best-practices-gameplay) your game achieves. The idea being that a game that has implemented many of the best practices is more likely to do well on Rune.
 
 The OP level is a simple guide to help you build better games with higher playtime, return rate, etc. The OP level is not used for any algorithms. However, if you follow the OP level guide and increase your metrics, then that'll also make your game more likely to be showcased in the app 😄
