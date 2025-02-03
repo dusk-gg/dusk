@@ -45,4 +45,4 @@ authors:
 * 🛡️ Cleaned up various small errors in the new login flow to bulletproof the experience for everyone.
 * Busted a small but frustrating bug where occasionally icons were being swapped throughout the app!
 * Averted a crash on the daily rewards main screen by cleaning up some code 🥳
-* Upgraded React Native Reanimated, React Native Screens, and Facebook GIFs to remove occasional animation crashes on Android!
+* Upgraded some dependencies to remove occasional animation crashes on Android!
