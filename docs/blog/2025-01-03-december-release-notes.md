@@ -33,7 +33,7 @@ authors:
 ## 🪲Bug Fixes
 
 * Disabled all the new gem sounds to avoid crashes while we fix them behind the scenes 🔇
-* ✨ Memoized each game’s comment list header component to prevent flickering!
+* ✨ Improved game comment list header to prevent flickering!
 * Made sure quest headings are translated when the language is changed 🌐🔁
 * Fixed an issue where the Add Friend quest wasn’t opening the Invite Friend action sheet.
 * Updated our push code to only show one reward alert at a time, avoiding confusing spam 🚨
