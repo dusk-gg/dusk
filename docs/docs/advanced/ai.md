@@ -23,7 +23,7 @@ Example of a single plain-text prompt:
 Rune.initLogic({
   actions: {
     myAction: (payload, { game }) => {
-      Rune.ai.promptRequest({
+      game.requestId = Rune.ai.promptRequest({
         messages: [{ role: "user", content: "What is Rune.ai?" }],
       })
     },
@@ -52,7 +52,7 @@ Rune.initLogic({
     myAction: (payload, { game }) => {
       const message = { role: "user", content: payload.userQuestion }
       game.messages.push(message)
-      Rune.ai.promptRequest({ messages: game.messages })
+      game.requestId = Rune.ai.promptRequest({ messages: game.messages })
     },
   },
   ai: {
@@ -74,7 +74,7 @@ Rune.initLogic({
   actions: {
     myAction: (payload, { game }) => {
       const dataUri = /* Generate data URI, e.g., from canvas */
-      Rune.ai.promptRequest({
+      game.requestId = Rune.ai.promptRequest({
         messages: [
           { role: "user", content: { type: "text", text: "What is Rune.ai?" } },
           { role: "user", content: { type: "image_data", image_url: dataUri } },
